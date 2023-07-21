@@ -1,0 +1,4 @@
+# Blocks robots from '/public' directory
+User-agent: *
+Disallow: /public
+

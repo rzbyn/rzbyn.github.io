@@ -1,0 +1,18 @@
+:root {
+	color-scheme: only dark;
+	}
+
+body {
+	width: 35em;
+	margin: 0 auto;
+	font-family: Tahoma, Verdana, Arial, sans-serif;
+	}
+
+a:link, a:visited, a:active {
+	color: white;
+	}
+
+a:hover {
+	color: hotpink;
+	}
+
