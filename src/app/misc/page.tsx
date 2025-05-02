@@ -1,9 +1,9 @@
 import { JSX } from "react";
 
-export default function Home(): JSX.Element {
+export function Misc(): JSX.Element {
   return (
     <main>
-      <h1>About</h1>
+      <h1>Miscellany</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -13,3 +13,6 @@ export default function Home(): JSX.Element {
     </main>
   );
 }
+
+export default Misc
+
