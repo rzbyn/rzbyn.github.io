@@ -1,11 +1,12 @@
 import { JSX } from "react";
 import Navbar from "../Navbar";
+import Link from "next/link";
 
 function Header(): JSX.Element {
   return (
     <>
       <header>
-        <span>logo</span> Rzbyn
+        <span>logo</span> <Link href="/">Rzbyn</Link>
       </header>
       <Navbar />
     </>
