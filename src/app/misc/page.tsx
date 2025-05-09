@@ -1,8 +1,8 @@
 import { JSX } from "react";
 
-export function Misc(): JSX.Element {
+function Misc(): JSX.Element {
   return (
-    <main>
+    <>
       <h1>Miscellany</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -10,7 +10,7 @@ export function Misc(): JSX.Element {
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-    </main>
+    </>
   );
 }
 

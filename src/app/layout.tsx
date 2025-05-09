@@ -27,9 +27,11 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en">
-      <body className={`${geistMono.variable} ${geistSans.variable} antialiased`} >
+      <body className={`${geistMono.variable} ${geistSans.variable} antialiased max-w-4xl mb-40 md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto`} >
         <Header />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
