@@ -1,30 +1,13 @@
-import { JSX } from "react/jsx-dev-runtime";
-import WritingItem from "./components/WritingItem";
+import { JSX } from "react/jsx-dev-runtime"
+import WritingList from "./components/WritingList"
 
-const writingItems: Array<{ id: number | string, title: string, date: Date, fullpath: string }> = [
-  {
-    id: 1,
-    title: "First Writing Ever",
-    date: new Date(),
-    fullpath: '/writings/1',
-  }
-]
+const writingItems: Array<{ id: number | string, title: string, date: Date, fullpath: string }> = []
 
 function Writing(): JSX.Element {
   return (
     <section>
       <h1>Writing</h1>
-      {
-        writingItems.length
-          ? <ol>
-            {
-              writingItems.map((writingItem): JSX.Element => {
-                return (<WritingItem key={writingItem.id} title={writingItem.title} date={writingItem.date} fullpath={writingItem.fullpath} />)
-              })
-            }
-          </ol>
-          : <p>Writing is empty.</p>
-      }
+      <WritingList writingItems={writingItems} />
     </section>
   )
 }

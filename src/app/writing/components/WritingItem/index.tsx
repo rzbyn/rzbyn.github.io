@@ -1,7 +1,7 @@
 import { JSX } from "react"
 import Link from "next/link"
 
-interface WritingItemProps {
+export interface WritingItemProps {
   title: string,
   date: Date,
   fullpath: string,

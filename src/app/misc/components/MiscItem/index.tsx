@@ -1,7 +1,7 @@
 import { JSX } from "react"
 import Link from "next/link"
 
-interface MiscItemProps {
+export interface MiscItemProps {
   title: string,
   date: Date,
   fullpath: string,
