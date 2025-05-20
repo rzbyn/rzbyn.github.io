@@ -6,7 +6,7 @@ function Header(): JSX.Element {
   return (
     <>
       <header className="mb-[9px]">
-        <span>logo</span> <Link href="/">Rzbyn</Link>
+        <span>[logo]</span> <Link href="/" className="font-bold tracking-wide text-2xl">Rzbyn</Link>
       </header>
       <Navbar />
     </>
