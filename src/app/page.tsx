@@ -2,14 +2,19 @@ import { JSX } from "react";
 
 export default function Home(): JSX.Element {
   return (
-    <>
+    <section>
       <h1>About</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </>
+      <div className="flex flex-col gap-2">
+        <p>
+          I'm a developer hailing from Indonesia. I lead Backend Engineering team at <a href="https://datasintesa.id/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Datasintesa</a>.
+        </p>
+        <p>
+          I try to share or write things I found interesting to me or something I do.
+        </p>
+        <p>
+          When I'm not coding, you can often finde me in the kitchen 🍳.
+        </p>
+      </div>
+    </section>
   );
 }
