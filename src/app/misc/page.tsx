@@ -5,10 +5,12 @@ const miscItems: Array<{ id: number | string, title: string, date: Date, fullpat
 
 function Misc(): JSX.Element {
   return (
-    <section>
+    <>
       <h1>Miscellany</h1>
-      <MiscList miscItems={miscItems} />
-    </section>
+      <section>
+        <MiscList miscItems={miscItems} />
+      </section>
+    </>
   );
 }
 

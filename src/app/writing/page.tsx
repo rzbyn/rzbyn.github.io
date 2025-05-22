@@ -5,10 +5,12 @@ const writingItems: Array<{ id: number | string, title: string, date: Date, full
 
 function Writing(): JSX.Element {
   return (
-    <section>
+    <>
       <h1>Writing</h1>
-      <WritingList writingItems={writingItems} />
-    </section>
+      <section>
+        <WritingList writingItems={writingItems} />
+      </section>
+    </>
   )
 }
 

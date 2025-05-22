@@ -9,7 +9,7 @@ export default function Home(): JSX.Element {
           I&apos;m a developer hailing from Indonesia. I lead Backend Engineering team at <a href="https://datasintesa.id/" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">Datasintesa</a>.
         </p>
         <p>
-          I try to share or write things I found interesting to me or something I do.
+          I try to write things I do to or something I found interesting.
         </p>
         <p>
           When I&apos;m not coding, you can often finde me in the kitchen 🍳.
