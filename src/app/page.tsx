@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
           I try to write things I do to or something I found interesting.
         </p>
         <p>
-          When I&apos;m not coding, you can often finde me in the kitchen 🍳.
+          When I&apos;m not coding, you can often find me in the kitchen 🍳.
         </p>
       </div>
     </section>
