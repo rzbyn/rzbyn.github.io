@@ -1,35 +1,25 @@
-import { JSX } from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { JSX } from "react";
+import { geistMono, geistSans } from "./_lib/fonts/geist-fonts";
 import Footer from "./components/Footer/";
-import "./globals.css";
 import Header from "./components/Header";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./globals.css";
 
 export const metadata: Metadata = {
-    title: "Reza Bayuni",
-    description: "Reza Bayuni's personal website.",
-    applicationName: "Reza Bayuni's peronal website.",
-    authors: [{ name: "Reza Bayuni", url: "https://rzbyn.com" }],
-    generator: "Next.js",
-    keywords: ["reza bayuni", "abe"],
-    referrer: "origin",
-    creator: "Reza Bayuni",
-    publisher: "Reza Bayuni",
-    robots: { index: true, follow: true },
-    alternates: {
-      canonical: "https://rzbyn.com",
-      languages: {},
-    },
+  title: "Reza Bayuni",
+  description: "Reza Bayuni's personal website.",
+  applicationName: "Reza Bayuni's peronal website.",
+  authors: [{ name: "Reza Bayuni", url: "https://rzbyn.com" }],
+  generator: "Next.js",
+  keywords: ["reza bayuni", "abe"],
+  referrer: "origin",
+  creator: "Reza Bayuni",
+  publisher: "Reza Bayuni",
+  robots: { index: true, follow: true },
+  alternates: {
+    canonical: "https://rzbyn.com",
+    languages: {},
+  },
 };
 
 export default function RootLayout({
