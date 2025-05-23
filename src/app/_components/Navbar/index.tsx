@@ -1,25 +1,8 @@
 'use client';
 
 import { JSX } from "react"
-import NavItem from "./components/NavItem";
-
-const navItems = [
-  {
-    text: "About",
-    fullpath: "/",
-    path: "",
-  },
-  {
-    text: "Writing",
-    fullpath: "/writing",
-    path: "writing",
-  },
-  {
-    text: "Misc",
-    fullpath: "/misc",
-    path: "misc",
-  },
-];
+import NavItem from "./_components/NavItem";
+import { navItems } from "./_lib/consts/nav-items";
 
 function Navbar(): JSX.Element {
   return (

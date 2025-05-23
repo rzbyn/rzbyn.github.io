@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import MiscList from "./components/MiscList";
+import MiscList from "./_components/MiscList";
 
 const miscItems: Array<{ id: number | string, title: string, date: Date, fullpath: string }> = []
 

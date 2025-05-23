@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { JSX } from "react";
 import { geistMono, geistSans } from "./_lib/fonts/geist-fonts";
-import Footer from "./components/Footer/";
-import Header from "./components/Header";
+import Footer from "./_components/Footer";
+import Header from "./_components/Header";
 import "./globals.css";
 
 export const metadata: Metadata = {

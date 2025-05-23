@@ -1,5 +1,5 @@
 import { JSX } from "react/jsx-dev-runtime"
-import WritingList from "./components/WritingList"
+import WritingList from "./_components/WritingList"
 
 const writingItems: Array<{ id: number | string, title: string, date: Date, fullpath: string }> = []
 
