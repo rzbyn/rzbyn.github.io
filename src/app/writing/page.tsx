@@ -1,9 +1,10 @@
-import { JSX } from "react/jsx-dev-runtime"
-import WritingList from "./_components/WritingList"
+import { getWritingList } from "../_lib/notion";
+import { JSX } from "react";
+import WritingList from "./_components/WritingList";
 
-const writingItems: Array<{ id: number | string, title: string, date: Date, fullpath: string }> = []
+async function Writing(): Promise<JSX.Element> {
+  const writingItems = await getWritingList();
 
-function Writing(): JSX.Element {
   return (
     <>
       <h1>Writing</h1>
@@ -15,4 +16,3 @@ function Writing(): JSX.Element {
 }
 
 export default Writing
-

@@ -1,9 +1,10 @@
 import { JSX } from "react";
+import { getMiscellanyList } from "../_lib/notion";
 import MiscList from "./_components/MiscList";
 
-const miscItems: Array<{ id: number | string, title: string, date: Date, fullpath: string }> = []
+async function Misc(): Promise<JSX.Element> {
+  const miscItems = await getMiscellanyList();
 
-function Misc(): JSX.Element {
   return (
     <>
       <h1>Miscellany</h1>
@@ -15,4 +16,3 @@ function Misc(): JSX.Element {
 }
 
 export default Misc
-
