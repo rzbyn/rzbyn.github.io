@@ -6,20 +6,17 @@ interface WritingListProps {
 }
 
 function WritingList({ writingItems }: WritingListProps): JSX.Element {
+  if (!writingItems || writingItems.length === 0 || !Array.isArray(writingItems))
+    return (<p>Writing is empty.</p>)
+
   return (
-    <>
+    <ol>
       {
-        writingItems.length
-          ? <ol>
-            {
-              writingItems.map((writingItem): JSX.Element => {
-                return (<WritingItem key={writingItem.id} title={writingItem.title} date={writingItem.date} fullpath={writingItem.fullpath} />)
-              })
-            }
-          </ol>
-          : <p>Writing is empty.</p>
+        writingItems.map((writingItem): JSX.Element => {
+          return (<WritingItem key={writingItem.id} title={writingItem.title} date={writingItem.date} fullpath={writingItem.fullpath} />)
+        })
       }
-    </>
+    </ol>
   )
 }
 
