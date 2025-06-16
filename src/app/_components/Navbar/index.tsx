@@ -1,5 +1,3 @@
-'use client';
-
 import { JSX } from "react"
 import NavItem from "./_components/NavItem";
 import { navItems } from "./_lib/consts/nav-items";
