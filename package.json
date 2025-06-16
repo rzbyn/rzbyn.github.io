@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "clear-cache": "rm -rf .next/cache/fetch-cache",
     "dev": "next dev --turbopack",
-    "build": "npm run clear-cache && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
