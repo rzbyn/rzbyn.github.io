@@ -9,7 +9,7 @@ let notionClient: Client | null = null;
  * Create a Notion client instance.
  * @returns Notion client instance.
  */
-function getNotionClient(): Client {
+export function getNotionClient(): Client {
   if (!process.env.NOTION_API_KEY) {
     throw new Error("NOTION_API_KEY is not set in the environment variables.");
   }

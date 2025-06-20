@@ -1,11 +1,11 @@
-import { JSX } from "react";
-import { getMiscellanyList } from "../_lib/notion";
-import MiscList from "./_components/MiscList";
+import { JSX } from "react"
+import MiscList from "./_components/MiscList"
+import { getMiscellanyItems } from "./_lib/get-miscellany-items"
 
 export const revalidate = 1
 
 async function Misc(): Promise<JSX.Element> {
-  const miscItems = await getMiscellanyList();
+  const miscItems = await getMiscellanyItems()
 
   return (
     <>
