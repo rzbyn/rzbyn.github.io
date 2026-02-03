@@ -1,11 +1,11 @@
-import { JSX } from "react"
-import MiscList from "./_components/MiscList"
-import { getMiscellanyItems } from "./_lib/get-miscellany-items"
+import type { JSX } from 'react';
+import MiscList from './_components/MiscList';
+import { getMiscellanyItems } from './_lib/get-miscellany-items';
 
-export const revalidate = 1
+export const revalidate = 1;
 
 async function Misc(): Promise<JSX.Element> {
-  const miscItems = await getMiscellanyItems()
+  const miscItems = await getMiscellanyItems();
 
   return (
     <>
@@ -14,7 +14,7 @@ async function Misc(): Promise<JSX.Element> {
         <MiscList miscItems={miscItems} />
       </section>
     </>
-  )
+  );
 }
 
-export default Misc
+export default Misc;

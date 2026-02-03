@@ -1,11 +1,11 @@
-import { JSX } from "react"
-import WritingList from "./_components/WritingList"
-import { getWritingItems } from "./_lib/get-writing-items"
+import type { JSX } from 'react';
+import WritingList from './_components/WritingList';
+import { getWritingItems } from './_lib/get-writing-items';
 
-export const revalidate = 1
+export const revalidate = 1;
 
 async function Writing(): Promise<JSX.Element> {
-  const writingItems = await getWritingItems()
+  const writingItems = await getWritingItems();
 
   return (
     <>
@@ -14,7 +14,7 @@ async function Writing(): Promise<JSX.Element> {
         <WritingList writingItems={writingItems} />
       </section>
     </>
-  )
+  );
 }
 
-export default Writing
+export default Writing;

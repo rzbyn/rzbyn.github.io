@@ -1,17 +1,17 @@
 export const navItems = [
   {
-    text: "About",
-    fullpath: "/",
-    path: "",
+    text: 'About',
+    fullpath: '/',
+    path: '',
   },
   {
-    text: "Writing",
-    fullpath: "/writing",
-    path: "writing",
+    text: 'Writing',
+    fullpath: '/writing',
+    path: 'writing',
   },
   {
-    text: "Misc",
-    fullpath: "/misc",
-    path: "misc",
+    text: 'Misc',
+    fullpath: '/misc',
+    path: 'misc',
   },
 ];
