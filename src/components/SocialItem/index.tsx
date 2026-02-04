@@ -7,7 +7,7 @@ interface SocialItemProps {
   alt: string;
 }
 
-function SocialItem({ href, src, alt }: SocialItemProps): JSX.Element {
+function SocialItemList({ href, src, alt }: SocialItemProps): JSX.Element {
   return (
     <li>
       <a href={href} target="_blank" rel="noopener noreferrer">
@@ -17,4 +17,4 @@ function SocialItem({ href, src, alt }: SocialItemProps): JSX.Element {
   );
 }
 
-export default SocialItem;
+export default SocialItemList;

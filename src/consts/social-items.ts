@@ -1,18 +1,18 @@
-export const iconsPath = '/assets/icons/';
+const ICONS_PATH = '/assets/icons/';
 export const socialItems = [
   {
     href: 'mailto:hi@rzbyn.com',
-    src: iconsPath + 'email.svg',
+    src: ICONS_PATH + 'email.svg',
     alt: 'email logo',
   },
   {
     href: 'https://www.github.com/rzbyn',
-    src: iconsPath + 'github.svg',
+    src: ICONS_PATH + 'github.svg',
     alt: 'github logo',
   },
   {
     href: 'https://www.linkedin.com/in/rezabayuni',
-    src: iconsPath + 'linkedin.svg',
+    src: ICONS_PATH + 'linkedin.svg',
     alt: 'linkedin logo',
   },
 ];

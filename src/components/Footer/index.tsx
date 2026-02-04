@@ -1,6 +1,6 @@
+import SocialItemList from '@components/SocialItem';
 import type { JSX } from 'react';
-import SocialItem from './_components/SocialItem';
-import { socialItems } from './_lib/consts/social-items';
+import { socialItems } from '../../consts/social-items';
 
 function Footer(): JSX.Element {
   return (
@@ -9,7 +9,7 @@ function Footer(): JSX.Element {
       <ul className="flex gap-2">
         {socialItems.map((socialItem, index: number): JSX.Element => {
           return (
-            <SocialItem
+            <SocialItemList
               key={index}
               href={socialItem.href}
               src={socialItem.src}
