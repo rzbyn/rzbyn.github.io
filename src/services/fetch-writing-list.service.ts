@@ -1,3 +1,4 @@
+import { env } from '@configs/env/server.env';
 import { Notion } from '@/libs/notion';
 
 /**
@@ -5,15 +6,10 @@ import { Notion } from '@/libs/notion';
  * @returns {Promise<any>} Notion database response.
  **/
 export async function fetchWritings(): Promise<any> {
-  if (!process.env.NOTION_DATASOURCE_ID) {
-    throw new Error(
-      'NOTION_DATASOURCE_ID is not set in the environment variables.',
-    );
-  }
   const notion = Notion.client;
 
   return notion.dataSources.query({
-    data_source_id: process.env.NOTION_DATASOURCE_ID,
+    data_source_id: env.NOTION_DATASOURCE_ID,
     filter: {
       and: [
         {
