@@ -1,8 +1,8 @@
 import Footer from '@components/Footer';
 import Header from '@components/Header';
+import { geistMono, geistSans } from '@consts/geist-fonts.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
-import { geistMono, geistSans } from '../consts/geist-fonts.const';
 import './globals.css';
 
 export const metadata: Metadata = {

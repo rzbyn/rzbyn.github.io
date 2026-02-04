@@ -1,9 +1,9 @@
 'use client';
 
+import { errorMessages } from '@consts/error-messages.const';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { type JSX, useEffect, useState } from 'react';
-import { errorMessages } from '../consts/error-messages.const';
 
 function NotFound(): JSX.Element {
   const router = useRouter();

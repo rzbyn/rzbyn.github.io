@@ -1,6 +1,6 @@
 import SocialItemList from '@components/SocialItem';
+import { socialItems } from '@consts/social-items';
 import type { JSX } from 'react';
-import { socialItems } from '../../consts/social-items';
 
 function Footer(): JSX.Element {
   return (
