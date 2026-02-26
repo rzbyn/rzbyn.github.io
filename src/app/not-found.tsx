@@ -16,10 +16,12 @@ function NotFound(): JSX.Element {
   });
 
   useEffect(() => {
-    const message =
-      errorMessages[Math.floor(Math.random() * errorMessages.length)];
-    setMessage(message);
-    return;
+    const timer = setTimeout(() => {
+      const randomMessage =
+        errorMessages[Math.floor(Math.random() * errorMessages.length)];
+      setMessage(randomMessage);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
