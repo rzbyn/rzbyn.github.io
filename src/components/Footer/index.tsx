@@ -8,15 +8,8 @@ function Footer(): JSX.Element {
     <footer className="flex justify-between">
       <div>&#169; {year} Reza Bayuni.</div>
       <ul className="flex gap-2">
-        {socialItems.map((socialItem, index: number): JSX.Element => {
-          return (
-            <SocialItemList
-              key={index}
-              href={socialItem.href}
-              src={socialItem.src}
-              alt={socialItem.alt}
-            />
-          );
+        {socialItems.map(({ href, src, alt }): JSX.Element => {
+          return <SocialItemList key={href} href={href} src={src} alt={alt} />;
         })}
       </ul>
     </footer>

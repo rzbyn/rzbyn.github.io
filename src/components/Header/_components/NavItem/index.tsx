@@ -7,17 +7,22 @@ import type { JSX } from 'react';
 
 interface NavItemProps extends NavItem {
   /** JSX key prop */
-  key: number | string;
+  index: number;
 }
 
-function NavItemList({ key, text, fullpath, path }: NavItemProps): JSX.Element {
+function NavItemList({
+  index,
+  text,
+  fullpath,
+  path,
+}: NavItemProps): JSX.Element {
   const pathName = usePathname().split('/')[1].toLowerCase();
   const isActive = (name: string): boolean => {
     return pathName === name;
   };
   return (
     <li>
-      {key === 0 || key === null ? '' : <span aria-hidden>/ </span>}
+      {index === 0 || index === null ? '' : <span aria-hidden>/ </span>}
       <Link
         href={fullpath}
         className={`${isActive(path) ? 'text-blue-500 underline' : ''}`}

@@ -6,13 +6,14 @@ function Navbar(): JSX.Element {
   return (
     <nav className="mb-7">
       <ul className="flex gap-2">
-        {navItems.map((navItem, index: number): JSX.Element => {
+        {navItems.map(({ text, fullpath, path }, index): JSX.Element => {
           return (
             <NavItemList
-              key={index}
-              text={navItem.text}
-              fullpath={navItem.fullpath}
-              path={navItem.path}
+              key={path}
+              index={index}
+              text={text}
+              fullpath={fullpath}
+              path={path}
             />
           );
         })}
