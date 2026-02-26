@@ -1,5 +1,17 @@
 const ICONS_PATH = '/assets/icons/';
-export const socialItems = [
+
+export interface SocialItem {
+  /** Link */
+  href: string;
+  /** Image source */
+  src: string;
+  /** Image alt text */
+  alt: string;
+}
+
+export interface SocialItems extends Array<SocialItem> {}
+
+export const socialItems: SocialItems = [
   {
     href: 'mailto:hi@rzbyn.com',
     src: ICONS_PATH + 'email.svg',

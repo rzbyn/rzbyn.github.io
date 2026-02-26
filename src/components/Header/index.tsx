@@ -1,6 +1,6 @@
-import type { JSX } from 'react';
-import Navbar from '../Navbar';
 import Link from 'next/link';
+import type { JSX } from 'react';
+import Navbar from './_components/Navbar';
 
 function Header(): JSX.Element {
   return (
