@@ -12,7 +12,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@notionhq/client": "^5.9.0",
+    "@notionhq/client": "^5.11.0",
     "@t3-oss/env-nextjs": "^0.13.10",
     "next": "^16.1.6",
     "react": "^19.2.4",
