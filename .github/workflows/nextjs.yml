@@ -73,6 +73,15 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Debug env variable
+        run: |
+          if [ -z "$NOTION_DATASOURCE_ID" ]; then echo "NOTION_DATASOURCE_ID is missing!"; exit 1; fi
+          echo "NOTION_DATASOURCE_ID is set (value not displayed for security)"
+          if [ -z "$NOTION_API_KEY" ]; then echo "NOTION_API_KEY is missing!"; exit 1; fi
+          echo "NOTION_API_KEY is set (value not displayed for security)"
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATASOURCE_ID: ${{ secrets.NOTION_DATASOURCE_ID }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env:
