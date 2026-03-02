@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+footer {
+  margin-top: 5rem;
+}
+
+main h1 {
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.025em;
+}
+
