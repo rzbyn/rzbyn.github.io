@@ -12,7 +12,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@notionhq/client": "^5.11.0",
+    "@notionhq/client": "^5.13.0",
     "@t3-oss/env-nextjs": "^0.13.10",
     "next": "^16.1.6",
     "react": "^19.2.4",
@@ -20,7 +20,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.4",
+    "@eslint/eslintrc": "^3.3.5",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^25",
     "@types/react": "^19",
