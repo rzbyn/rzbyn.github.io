@@ -12,9 +12,9 @@
     "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
-    "@notionhq/client": "^5.13.0",
-    "@t3-oss/env-nextjs": "^0.13.10",
-    "next": "^16.1.6",
+    "@notionhq/client": "^5.14.0",
+    "@t3-oss/env-nextjs": "^0.13.11",
+    "next": "^16.2.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "zod": "^4.3.6"
@@ -26,14 +26,14 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "^16.1.6",
+    "eslint-config-next": "^16.2.1",
     "eslint-config-prettier": "^10.1.8",
     "prettier": "^3.8.1",
     "tailwindcss": "^4",
     "typescript": "^5.9.3"
   },
   "volta": {
-    "node": "24.14.0",
-    "npm": "11.9.0"
+    "node": "24.14.1",
+    "npm": "11.11.0"
   }
 }
