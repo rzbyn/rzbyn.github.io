@@ -9,6 +9,7 @@ import {
 } from '@consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
+import jsonLd from '@/libs/jsonLd';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -34,6 +35,31 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={`${geistMono.variable} ${geistSans.variable} `}>
+      <head>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint:security/noDangerouslySetInnerHtml
+          dangerouslySetInnerHTML={{
+            __html: jsonLd({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Reza Bayuni',
+              url: 'https://rzbyn.com',
+              jobTitle: 'Tech Lead',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'Datasintesa',
+                url: 'https://datasintesa.id/',
+              },
+              email: 'hi@rzbyn.com',
+              sameAs: [
+                'https://www.github.com/rzbyn',
+                'https://www.linkedin.com/in/rezabayuni',
+              ],
+            }),
+          }}
+        />
+      </head>
       <body className="flex flex-col gap-8 font-(family-name:--font-geist-mono) antialiased max-w-5xl mb-40 mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
         <Header />
         <main className="flex-1 min-h-[58dvh]">{children}</main>
