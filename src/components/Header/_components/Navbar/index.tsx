@@ -4,8 +4,8 @@ import NavItemList from '../NavItem';
 
 function Navbar(): JSX.Element {
   return (
-    <nav className="mb-7">
-      <ul className="flex gap-2">
+    <nav>
+      <ul className="flex flex-row gap-2">
         {navItems.map(({ text, fullpath, path }, index): JSX.Element => {
           return (
             <NavItemList

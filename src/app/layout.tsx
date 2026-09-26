@@ -29,9 +29,9 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={`${geistMono.variable} ${geistSans.variable} `}>
-      <body className="font-[family-name:var(--font-geist-mono)] antialiased max-w-4xl mb-40 md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
+      <body className="flex flex-col gap-8 font-(family-name:--font-geist-mono) antialiased max-w-5xl mb-40 mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
         <Header />
-        <main>{children}</main>
+        <main className="flex-1 min-h-[58dvh]">{children}</main>
         <Footer />
       </body>
     </html>
