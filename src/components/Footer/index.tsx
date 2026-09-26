@@ -5,7 +5,7 @@ import type { JSX } from 'react';
 function Footer(): JSX.Element {
   const year = new Date().getFullYear();
   return (
-    <footer className="flex justify-between">
+    <footer className="flex justify-between pt-5">
       <div>&#169; {year} Reza Bayuni.</div>
       <ul className="flex gap-2">
         {socialItems.map(({ href, src, alt }): JSX.Element => {
