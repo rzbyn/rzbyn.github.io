@@ -1,13 +1,8 @@
 @import "tailwindcss";
 
-footer {
-  margin-top: 5rem;
-}
-
-main h1 {
-  margin-bottom: 0.8rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.025em;
+@layer base {
+  main h1 {
+    @apply pb-3 uppercase font-bold tracking-wide
+  }
 }
 

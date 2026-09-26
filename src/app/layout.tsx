@@ -1,24 +1,30 @@
 import Footer from '@components/Footer';
 import Header from '@components/Header';
 import { geistMono, geistSans } from '@consts/geist-fonts.const';
+import {
+  OPEN_GRAPH_DEFAULTS,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from '@consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
+import jsonLd from '@/libs/jsonLd';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Reza Bayuni',
-  description: "Reza Bayuni's personal website.",
-  applicationName: "Reza Bayuni's peronal website.",
-  authors: [{ name: 'Reza Bayuni', url: 'https://rzbyn.com' }],
-  generator: 'Next.js',
-  keywords: ['reza bayuni', 'abe'],
+  metadataBase: SITE_URL,
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
   referrer: 'origin',
-  creator: 'Reza Bayuni',
-  publisher: 'Reza Bayuni',
-  robots: { index: true, follow: true },
-  alternates: {
-    canonical: 'https://rzbyn.com',
-    languages: {},
+  openGraph: {
+    ...OPEN_GRAPH_DEFAULTS,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
 };
 
@@ -29,9 +35,34 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={`${geistMono.variable} ${geistSans.variable} `}>
-      <body className="font-[family-name:var(--font-geist-mono)] antialiased max-w-4xl mb-40 md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
+      <head>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint:security/noDangerouslySetInnerHtml
+          dangerouslySetInnerHTML={{
+            __html: jsonLd({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Reza Bayuni',
+              url: 'https://rzbyn.com',
+              jobTitle: 'Tech Lead',
+              worksFor: {
+                '@type': 'Organization',
+                name: 'Datasintesa',
+                url: 'https://datasintesa.id/',
+              },
+              email: 'hi@rzbyn.com',
+              sameAs: [
+                'https://www.github.com/rzbyn',
+                'https://www.linkedin.com/in/rezabayuni',
+              ],
+            }),
+          }}
+        />
+      </head>
+      <body className="flex flex-col gap-8 font-(family-name:--font-geist-mono) antialiased max-w-5xl mb-40 mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
         <Header />
-        <main>{children}</main>
+        <main className="flex-1 min-h-[58dvh]">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,9 +1,9 @@
 'use client';
 
-import { type NavItem } from '@consts/nav-items';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { JSX } from 'react';
+import { type NavItem } from '@/consts/nav-items.const';
 
 interface NavItemProps extends NavItem {
   /** JSX key prop */

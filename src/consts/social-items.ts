@@ -14,17 +14,17 @@ export interface SocialItems extends Array<SocialItem> {}
 export const socialItems: SocialItems = [
   {
     href: 'mailto:hi@rzbyn.com',
-    src: ICONS_PATH + 'email.svg',
-    alt: 'email logo',
+    src: `${ICONS_PATH}email.svg`,
+    alt: 'email',
   },
   {
     href: 'https://www.github.com/rzbyn',
-    src: ICONS_PATH + 'github.svg',
-    alt: 'github logo',
+    src: `${ICONS_PATH}github.svg`,
+    alt: 'github',
   },
   {
     href: 'https://www.linkedin.com/in/rezabayuni',
-    src: ICONS_PATH + 'linkedin.svg',
-    alt: 'linkedin logo',
+    src: `${ICONS_PATH}linkedin.svg`,
+    alt: 'linkedin',
   },
 ];
