@@ -1,4 +1,20 @@
+import {
+  OPEN_GRAPH_DEFAULTS,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+} from '@consts/site-metadata.const';
+import type { Metadata } from 'next';
 import type { JSX } from 'react';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  openGraph: {
+    ...OPEN_GRAPH_DEFAULTS,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    url: '/',
+  },
+};
 
 function Datasintesa(): JSX.Element {
   return (

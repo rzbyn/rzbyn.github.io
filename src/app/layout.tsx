@@ -1,24 +1,29 @@
 import Footer from '@components/Footer';
 import Header from '@components/Header';
 import { geistMono, geistSans } from '@consts/geist-fonts.const';
+import {
+  OPEN_GRAPH_DEFAULTS,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from '@consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Reza Bayuni',
-  description: "Reza Bayuni's personal website.",
-  applicationName: "Reza Bayuni's peronal website.",
-  authors: [{ name: 'Reza Bayuni', url: 'https://rzbyn.com' }],
-  generator: 'Next.js',
-  keywords: ['reza bayuni', 'abe'],
+  metadataBase: SITE_URL,
+  title: {
+    default: SITE_NAME,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
   referrer: 'origin',
-  creator: 'Reza Bayuni',
-  publisher: 'Reza Bayuni',
-  robots: { index: true, follow: true },
-  alternates: {
-    canonical: 'https://rzbyn.com',
-    languages: {},
+  openGraph: {
+    ...OPEN_GRAPH_DEFAULTS,
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
   },
 };
 
