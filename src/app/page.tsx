@@ -1,28 +1,36 @@
 import type { JSX } from 'react';
 
+function Datasintesa(): JSX.Element {
+  return (
+    <a
+      className="text-blue-500 underline"
+      href="https://datasintesa.id/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Datasintesa
+    </a>
+  );
+}
+
 export default function Home(): JSX.Element {
   return (
-    <section>
+    <>
       <h1>About</h1>
-      <div className="flex flex-col gap-2">
+      <section className="flex flex-col gap-4">
         <p>
-          I&apos;m a developer hailing from Indonesia. I lead Backend
-          Engineering team at{' '}
-          <a
-            href="https://datasintesa.id/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 underline"
-          >
-            Datasintesa
-          </a>
-          .
+          I&apos;m a software engineer living in Jakarta, Indonesia. I&apos;m
+          currently the Technical Lead of <Datasintesa />.
         </p>
-        <p>I try to write things I do or something I found interesting.</p>
         <p>
-          When I&apos;m not coding, you can often find me in the kitchen 🍳.
+          Working around architecture and technological stacks across projects.
         </p>
-      </div>
-    </section>
+        <p>
+          Husband to a beautiful wife, and soon-to-be father. When I&apos;m not
+          coding, you can often find me in the kitchen 🍳 — lately I&apos;ve
+          been into Italian and Chinese cuisine.
+        </p>
+      </section>
+    </>
   );
 }
