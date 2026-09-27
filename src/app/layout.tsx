@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
-  referrer: 'origin',
+  referrer: 'origin-when-cross-origin',
   openGraph: {
     ...OPEN_GRAPH_DEFAULTS,
     title: SITE_NAME,

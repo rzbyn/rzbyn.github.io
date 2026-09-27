@@ -7,7 +7,12 @@ interface SocialItemProps extends SocialItem {}
 function SocialItemList({ href, src, alt }: SocialItemProps): JSX.Element {
   return (
     <li>
-      <a href={href} target="_blank" rel="noopener noreferrer">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener"
+        referrerPolicy="strict-origin-when-cross-origin"
+      >
         <Image src={src} alt={alt} width={20} height={20} />
       </a>
     </li>

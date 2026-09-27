@@ -22,7 +22,8 @@ function Datasintesa(): JSX.Element {
       className="text-blue-500 underline"
       href="https://datasintesa.id/"
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
+      referrerPolicy="strict-origin-when-cross-origin"
     >
       Datasintesa
     </a>
