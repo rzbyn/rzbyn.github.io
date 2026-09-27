@@ -8,7 +8,7 @@ function Header(): JSX.Element {
       <div>
         <span className="font-extralight">[logo]</span>{' '}
         <Link href="/" className="font-bold tracking-wide text-2xl">
-          Rzbyn
+          Reza Bayuni
         </Link>
       </div>
       <Navbar />
