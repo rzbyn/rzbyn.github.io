@@ -4,7 +4,13 @@ import type { SocialItem } from '@/consts/social-items';
 
 interface SocialItemProps extends SocialItem {}
 
-function SocialItemList({ href, src, alt }: SocialItemProps): JSX.Element {
+function SocialItemList({
+  href,
+  src,
+  alt,
+  width,
+  height,
+}: SocialItemProps): JSX.Element {
   return (
     <li>
       <a
@@ -13,7 +19,18 @@ function SocialItemList({ href, src, alt }: SocialItemProps): JSX.Element {
         rel="noopener"
         referrerPolicy="strict-origin-when-cross-origin"
       >
-        <Image src={src} alt={alt} width={20} height={20} />
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          loading="eager"
+          style={{
+            width: '24px',
+            height: '24px',
+            objectFit: 'contain',
+          }}
+        />
       </a>
     </li>
   );
