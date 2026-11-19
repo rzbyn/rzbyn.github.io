@@ -9,7 +9,7 @@ import {
 } from '@consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
-import jsonLd from '@/libs/jsonLd';
+import jsonLd from '@shared/lib/json-ld';
 import './globals.css';
 
 export const metadata: Metadata = {
