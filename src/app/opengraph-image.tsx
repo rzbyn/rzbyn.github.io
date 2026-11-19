@@ -41,7 +41,7 @@ export default function OpenGraphImage(): ImageResponse {
           REZA BAYUNI
         </span>
         <span style={{ fontSize: '32px', color: BRAND_COLORS.muted }}>
-          Software engineer and technical lead
+          Software engineer • Technical lead
         </span>
       </div>
 
