@@ -9,7 +9,10 @@ export const textLinkVariants = cva('', {
     tone: {
       accent: 'text-accent',
       inherit: '',
-      'hover-accent': 'hover:text-accent',
+      muted:
+        'text-muted transition-colors duration-150 ease-[ease] hover:text-foreground',
+      'hover-accent':
+        'transition-colors duration-150 ease-[ease] hover:text-accent',
     },
     underline: {
       always: 'underline',
