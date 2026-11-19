@@ -23,7 +23,8 @@
       "@/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
       "@configs/*": ["./src/configs/*"],
-      "@consts/*": ["./src/consts/*"]
+      "@consts/*": ["./src/consts/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   },
   "include": [
