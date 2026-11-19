@@ -1,8 +1,8 @@
 import { isFullPage } from '@notionhq/client';
-import { fetchMiscs } from '../../../services/fetch-misc-list.service';
+import { fetchPosts } from '@features/posts/services/fetch-posts.service';
 
 export async function getMiscellanyItems() {
-  const { results } = await fetchMiscs();
+  const { results } = await fetchPosts('miscellany');
   const path = '/misc/';
   return (results as any[]).reduce<
     Array<{

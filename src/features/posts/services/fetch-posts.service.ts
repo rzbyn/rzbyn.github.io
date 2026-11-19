@@ -1,11 +1,13 @@
 import { env } from '@shared/config/env/server.env';
 import { Notion } from '@shared/lib/notion';
+import type { PostType } from '../types';
 
 /**
- * Fetch miscellany posts from notion
+ * Fetch published posts of the given type from notion
+ * @param type Notion `type` select value.
  * @returns {Promise<any>} Notion database response.
  **/
-export async function fetchMiscs(): Promise<any> {
+export async function fetchPosts(type: PostType): Promise<any> {
   const notion = Notion.client;
 
   return notion.dataSources.query({
@@ -15,7 +17,7 @@ export async function fetchMiscs(): Promise<any> {
         {
           property: 'type',
           select: {
-            equals: 'miscellany',
+            equals: type,
           },
         },
         {

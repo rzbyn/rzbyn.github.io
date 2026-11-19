@@ -1,8 +1,8 @@
 import { isFullPage } from '@notionhq/client';
-import { fetchWritings } from '../../../services/fetch-writing-list.service';
+import { fetchPosts } from '@features/posts/services/fetch-posts.service';
 
 export async function getWritingItems() {
-  const notionPayload = await fetchWritings();
+  const notionPayload = await fetchPosts('writing');
   const { results } = notionPayload;
   const path = '/writing/';
   return (results as any[]).reduce<
