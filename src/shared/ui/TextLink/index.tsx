@@ -26,7 +26,7 @@ export const textLinkVariants = cva('', {
 type TextLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> &
   VariantProps<typeof textLinkVariants> & {
     href: string;
-    /** Open in a new tab with rel="noopener" and a strict referrer policy */
+    /** Open in a new tab (announced to screen readers) with rel="noopener" and a strict referrer policy */
     external?: boolean;
   };
 
@@ -36,6 +36,7 @@ function TextLink({
   tone,
   underline,
   className,
+  children,
   ...props
 }: TextLinkProps): JSX.Element {
   const classes = cn(textLinkVariants({ tone, underline }), className);
@@ -49,11 +50,18 @@ function TextLink({
         referrerPolicy="strict-origin-when-cross-origin"
         className={classes}
         {...props}
-      />
+      >
+        {children}
+        <span className="sr-only"> (opens in new tab)</span>
+      </a>
     );
   }
 
-  return <Link href={href} className={classes} {...props} />;
+  return (
+    <Link href={href} className={classes} {...props}>
+      {children}
+    </Link>
+  );
 }
 
 export default TextLink;
