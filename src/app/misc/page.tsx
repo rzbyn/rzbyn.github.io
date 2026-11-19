@@ -30,9 +30,7 @@ async function Misc(): Promise<JSX.Element> {
   return (
     <>
       <Heading>Miscellany</Heading>
-      <section>
-        <PostList posts={posts} emptyMessage="Misc is empty." />
-      </section>
+      <PostList posts={posts} emptyMessage="Misc is empty." />
     </>
   );
 }

@@ -30,9 +30,7 @@ async function Writing(): Promise<JSX.Element> {
   return (
     <>
       <Heading>Writing</Heading>
-      <section>
-        <PostList posts={posts} emptyMessage="Writing is empty." />
-      </section>
+      <PostList posts={posts} emptyMessage="Writing is empty." />
     </>
   );
 }
