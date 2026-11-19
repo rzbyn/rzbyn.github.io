@@ -1,4 +1,4 @@
-import { env } from '@configs/env/server.env';
+import { env } from '@shared/config/env/server.env';
 import { Client } from '@notionhq/client';
 
 export class Notion {

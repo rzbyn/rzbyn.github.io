@@ -1,5 +1,5 @@
-import '@configs/env/client.env';
-import '@configs/env/server.env';
+import '@shared/config/env/client.env';
+import '@shared/config/env/server.env';
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
