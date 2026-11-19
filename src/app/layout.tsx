@@ -1,5 +1,5 @@
 import Footer from '@components/Footer';
-import Header from '@components/Header';
+import { Header } from '@features/layout';
 import { geistMono, geistSans } from '@shared/consts/geist-fonts.const';
 import {
   OPEN_GRAPH_DEFAULTS,

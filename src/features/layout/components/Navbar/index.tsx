@@ -1,5 +1,5 @@
 import type { JSX } from 'react';
-import { navItems } from '@/consts/nav-items.const';
+import { navItems } from '../../consts/nav-items.const';
 import NavItemList from '../NavItem';
 
 function Navbar(): JSX.Element {
