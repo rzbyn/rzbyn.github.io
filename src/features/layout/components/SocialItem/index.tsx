@@ -25,6 +25,7 @@ function SocialItemList({
           width={width}
           height={height}
           loading="eager"
+          className="dark:invert"
           style={{
             width: '24px',
             height: '24px',
