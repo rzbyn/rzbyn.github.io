@@ -15,3 +15,13 @@ Rules:
 - Code used by only one feature lives in that feature. Move it to `shared/` once a second place needs it.
 - Components use the `Name/index.tsx` pattern. Files use the `.const.ts` and `.service.ts` suffixes.
 - Style with the semantic tokens defined in `src/app/globals.css` (`bg-background`, `text-foreground`, `text-accent`, `font-mono`). Don't use raw palette colors (`blue-500`, hex) in components. Dark mode follows `prefers-color-scheme` through the default `dark:` variant; there is no toggle.
+
+## Accessibility
+
+Target WCAG 2.2 AA. Use native HTML first and ARIA only where HTML has no equivalent.
+
+- Use `TextLink` for links. Its `external` prop adds the visually hidden "(opens in new tab)" label.
+- Don't add focus classes to components. The global `:focus-visible` rule in `src/app/globals.css` draws every focus ring.
+- Add `role="list"` to a styled `<ul>`/`<ol>` outside `<nav>`. Safari drops list semantics under Tailwind's `list-style: none`.
+- Use one `<h1>` per page through `Heading`, and don't skip heading levels. Wrap dates in `<time dateTime>`. Don't add `<section>` without a heading.
+- No timed redirects or auto-advancing content. Text color tokens must keep 4.5:1 contrast against `--background` in both schemes.
