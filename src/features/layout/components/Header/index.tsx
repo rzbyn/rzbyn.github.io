@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import type { JSX } from 'react';
-import Navbar from '../Navbar';
 
 function Header(): JSX.Element {
   return (
-    <header className="flex flex-col gap-2">
+    <header className="col-span-full flex items-center gap-3 md:grid md:grid-cols-subgrid md:mb-20">
       <div>
         <span aria-hidden className="font-extralight">
           [logo]
@@ -13,7 +12,6 @@ function Header(): JSX.Element {
           Reza Bayuni
         </Link>
       </div>
-      <Navbar />
     </header>
   );
 }

@@ -1,4 +1,4 @@
-import { Footer, Header } from '@features/layout';
+import { Footer, Header, Navbar } from '@features/layout';
 import { archivo, geistMono, literata } from '@shared/consts/fonts.const';
 import {
   OPEN_GRAPH_DEFAULTS,
@@ -69,7 +69,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="flex flex-col gap-8 font-sans antialiased max-w-5xl mb-40 mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
+      <body className="grid grid-cols-1 gap-y-6 font-sans antialiased max-w-5xl mx-4 mt-8 mb-40 md:grid-cols-[200px_minmax(0,1fr)] md:gap-y-0 md:mt-20 lg:mt-32 lg:mx-auto">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:text-foreground focus:px-3 focus:py-2 focus:underline"
@@ -77,11 +77,12 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Header />
+        <Navbar />
         {/* tabIndex -1: focus target for the skip link only, not a control */}
         <main
           id="main-content"
           tabIndex={-1}
-          className="flex-1 min-h-[58dvh] focus:outline-none"
+          className="min-h-[58dvh] focus:outline-none md:col-start-2"
         >
           {children}
         </main>
