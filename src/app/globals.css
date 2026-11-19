@@ -30,8 +30,15 @@
   --color-muted: var(--muted);
   --color-rule: var(--rule);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-archivo);
+  --font-serif: var(--font-literata);
   --font-mono: var(--font-geist-mono);
+}
+
+/* Wide Archivo. A custom name, because tailwind-merge reads unknown font-*
+   classes as a font family and would drop font-sans next to it. */
+@utility stretch-wide {
+  font-variation-settings: 'wdth' 125;
 }
 
 /* Static tokens: content measure and the strong ease-out for UI motion. */

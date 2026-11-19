@@ -1,5 +1,5 @@
 import { Footer, Header } from '@features/layout';
-import { geistMono, geistSans } from '@shared/consts/geist-fonts.const';
+import { archivo, geistMono, literata } from '@shared/consts/fonts.const';
 import {
   OPEN_GRAPH_DEFAULTS,
   SITE_DESCRIPTION,
@@ -40,7 +40,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): JSX.Element {
   return (
-    <html lang="en" className={`${geistMono.variable} ${geistSans.variable} `}>
+    <html
+      lang="en"
+      className={`${archivo.variable} ${literata.variable} ${geistMono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
@@ -66,7 +69,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="flex flex-col gap-8 font-mono antialiased max-w-5xl mb-40 mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
+      <body className="flex flex-col gap-8 font-sans antialiased max-w-5xl mb-40 mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:text-foreground focus:px-3 focus:py-2 focus:underline"

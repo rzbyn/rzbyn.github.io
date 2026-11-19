@@ -14,7 +14,7 @@ Rules:
 - Imports inside a feature are relative. Imports of shared code use `@shared/...`.
 - Code used by only one feature lives in that feature. Move it to `shared/` once a second place needs it.
 - Components use the `Name/index.tsx` pattern. Files use the `.const.ts` and `.service.ts` suffixes.
-- Style with the semantic tokens defined in `src/app/globals.css` (`bg-background`, `text-foreground`, `text-muted`, `text-accent`, `border-rule`, `max-w-content`, `font-mono`). Don't use raw palette colors (`blue-500`, hex) in components. Dark mode follows `prefers-color-scheme` through the default `dark:` variant; there is no toggle.
+- Style with the semantic tokens defined in `src/app/globals.css` (`bg-background`, `text-foreground`, `text-muted`, `text-accent`, `border-rule`, `max-w-content`, `font-sans`, `font-serif`, `stretch-wide`). Use `font-mono` only for code. Don't use raw palette colors (`blue-500`, hex) in components. Dark mode follows `prefers-color-scheme` through the default `dark:` variant; there is no toggle.
 
 ## Accessibility
 
