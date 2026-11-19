@@ -67,8 +67,21 @@ export default function RootLayout({
         />
       </head>
       <body className="flex flex-col gap-8 font-mono antialiased max-w-5xl mb-40 mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:text-foreground focus:px-3 focus:py-2 focus:underline"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1 min-h-[58dvh]">{children}</main>
+        {/* tabIndex -1: focus target for the skip link only, not a control */}
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="flex-1 min-h-[58dvh] focus:outline-none"
+        >
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
