@@ -1,1 +1,1 @@
-export { errorMessages } from './consts/error-messages.const';
+export { default as RandomMessage } from './components/RandomMessage';
