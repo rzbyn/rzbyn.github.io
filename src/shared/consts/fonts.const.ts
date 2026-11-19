@@ -7,11 +7,10 @@ export const archivo = Archivo({
   axes: ['wdth'],
 });
 
-/** Prose. */
+/** Prose. Add 'italic' to style once rendered posts need it. */
 export const literata = Literata({
   variable: '--font-literata',
   subsets: ['latin'],
-  style: ['normal', 'italic'],
   axes: ['opsz'],
 });
 
