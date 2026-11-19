@@ -69,7 +69,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="grid grid-cols-1 gap-y-6 font-sans antialiased mx-auto w-[min(64rem,calc(100%-2rem))] mt-8 mb-40 md:grid-cols-[200px_minmax(0,1fr)] md:gap-y-0 md:mt-20 lg:mt-32">
+      <body className="grid min-h-svh grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-y-6 font-sans antialiased mx-auto w-[min(64rem,calc(100%-2rem))] pt-8 pb-10 md:grid-cols-[200px_minmax(0,1fr)] md:grid-rows-[auto_1fr_auto] md:gap-y-0 md:pt-20 md:pb-16 lg:pt-32">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:text-foreground focus:px-3 focus:py-2 focus:underline"
@@ -82,7 +82,7 @@ export default function RootLayout({
         <main
           id="main-content"
           tabIndex={-1}
-          className="min-h-[58dvh] focus:outline-none md:col-start-2"
+          className="focus:outline-none md:col-start-2"
         >
           {children}
         </main>
