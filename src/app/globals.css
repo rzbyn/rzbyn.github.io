@@ -108,7 +108,7 @@
     text-decoration-line: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
-    text-decoration-color: color-mix(in oklab, var(--accent) 40%, transparent);
+    text-decoration-color: color-mix(in oklab, var(--accent) 70%, transparent);
     transition: text-decoration-color 150ms ease;
 
     @media (hover: hover) {

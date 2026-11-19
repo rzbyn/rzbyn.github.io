@@ -14,7 +14,7 @@ export const textLinkVariants = cva('', {
     },
     underline: {
       always:
-        'underline decoration-accent/40 decoration-1 underline-offset-3 transition-[text-decoration-color] duration-150 ease-[ease] hover:decoration-accent',
+        'underline decoration-accent/70 decoration-1 underline-offset-3 transition-[text-decoration-color] duration-150 ease-[ease] hover:decoration-accent',
       hover: 'hover:underline',
       none: '',
     },
