@@ -27,6 +27,7 @@ function NavItemList({
         href={fullpath}
         tone={isActive(path) ? 'accent' : 'inherit'}
         underline={isActive(path) ? 'always' : 'none'}
+        aria-current={isActive(path) ? 'page' : undefined}
       >
         {text}
       </TextLink>
