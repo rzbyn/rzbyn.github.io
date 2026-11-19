@@ -15,12 +15,14 @@ function PostItem({ title, date, fullpath }: PostItemProps): JSX.Element {
         href={fullpath}
         tone="hover-accent"
         underline="hover"
-        className="flex justify-between"
+        className="flex justify-between gap-4"
       >
         <Heading as="h2" variant="item">
           {title}
         </Heading>
-        <span>{date.toLocaleDateString('id-ID')}</span>
+        <time dateTime={date.toISOString().slice(0, 10)} className="shrink-0">
+          {date.toLocaleDateString('id-ID', { timeZone: 'UTC' })}
+        </time>
       </TextLink>
     </li>
   );
