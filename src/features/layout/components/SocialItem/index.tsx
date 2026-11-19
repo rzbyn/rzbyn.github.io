@@ -1,3 +1,4 @@
+import TextLink from '@shared/ui/TextLink';
 import Image from 'next/image';
 import type { JSX } from 'react';
 import type { SocialItem } from '../../consts/social-items.const';
@@ -10,15 +11,11 @@ function SocialItemList({
   alt,
   width,
   height,
+  external,
 }: SocialItemProps): JSX.Element {
   return (
     <li>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener"
-        referrerPolicy="strict-origin-when-cross-origin"
-      >
+      <TextLink href={href} external={external} tone="inherit" underline="none">
         <Image
           src={src}
           alt={alt}
@@ -32,7 +29,7 @@ function SocialItemList({
             objectFit: 'contain',
           }}
         />
-      </a>
+      </TextLink>
     </li>
   );
 }

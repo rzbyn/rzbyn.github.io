@@ -8,18 +8,9 @@ function Footer(): JSX.Element {
     <footer className="flex flex-row justify-between">
       <div>&#169; {year} Reza Bayuni.</div>
       <ul className="flex flex-row gap-4">
-        {socialItems.map(({ href, src, alt, width, height }): JSX.Element => {
-          return (
-            <SocialItemList
-              key={href}
-              href={href}
-              src={src}
-              alt={alt}
-              width={width}
-              height={height}
-            />
-          );
-        })}
+        {socialItems.map((item): JSX.Element => (
+          <SocialItemList key={item.href} {...item} />
+        ))}
       </ul>
     </footer>
   );
