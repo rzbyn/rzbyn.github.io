@@ -1,6 +1,6 @@
-import { socialItems } from '@consts/social-items.const';
+import { socialItems } from '../../consts/social-items.const';
 import type { JSX } from 'react';
-import SocialItemList from '@/components/Footer/_components/SocialItem';
+import SocialItemList from '../SocialItem';
 
 function Footer(): JSX.Element {
   const year = new Date().getFullYear();
