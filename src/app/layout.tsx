@@ -69,7 +69,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="grid grid-cols-1 gap-y-6 font-sans antialiased max-w-5xl mx-4 mt-8 mb-40 md:grid-cols-[200px_minmax(0,1fr)] md:gap-y-0 md:mt-20 lg:mt-32 lg:mx-auto">
+      <body className="grid grid-cols-1 gap-y-6 font-sans antialiased mx-auto w-[min(64rem,calc(100%-2rem))] mt-8 mb-40 md:grid-cols-[200px_minmax(0,1fr)] md:gap-y-0 md:mt-20 lg:mt-32">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:text-foreground focus:px-3 focus:py-2 focus:underline"
