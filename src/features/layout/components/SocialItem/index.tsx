@@ -1,10 +1,8 @@
 import TextLink from '@shared/ui/TextLink';
 import type { JSX } from 'react';
-import type { SocialItem } from '../../consts/social-items.const';
+import type { SocialItem as SocialItemProps } from '../../consts/social-items.const';
 
-interface SocialItemProps extends SocialItem {}
-
-function SocialItemList({
+function SocialItem({
   href,
   label,
   external,
@@ -26,4 +24,4 @@ function SocialItemList({
   );
 }
 
-export default SocialItemList;
+export default SocialItem;

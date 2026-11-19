@@ -4,9 +4,9 @@ import { cn } from '@shared/lib/cn';
 import TextLink from '@shared/ui/TextLink';
 import { usePathname } from 'next/navigation';
 import type { JSX } from 'react';
-import { type NavItem } from '../../consts/nav-items.const';
+import type { NavItem as NavItemData } from '../../consts/nav-items.const';
 
-function NavItemList({ text, fullpath, path }: NavItem): JSX.Element {
+function NavItem({ text, fullpath, path }: NavItemData): JSX.Element {
   const isActive = usePathname().split('/')[1].toLowerCase() === path;
   return (
     // md: the dot hangs left (5px dot + 8px gap) so the text lines up with the mark
@@ -33,4 +33,4 @@ function NavItemList({ text, fullpath, path }: NavItem): JSX.Element {
   );
 }
 
-export default NavItemList;
+export default NavItem;

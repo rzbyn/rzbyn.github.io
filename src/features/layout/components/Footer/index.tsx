@@ -1,6 +1,6 @@
 import { socialItems } from '../../consts/social-items.const';
 import type { JSX } from 'react';
-import SocialItemList from '../SocialItem';
+import SocialItem from '../SocialItem';
 
 function Footer(): JSX.Element {
   const year = new Date().getFullYear();
@@ -10,7 +10,7 @@ function Footer(): JSX.Element {
       {/* role="list": Safari drops list semantics under list-style:none */}
       <ul role="list" className="flex flex-row gap-3">
         {socialItems.map((item): JSX.Element => (
-          <SocialItemList key={item.href} {...item} />
+          <SocialItem key={item.href} {...item} />
         ))}
       </ul>
     </footer>
