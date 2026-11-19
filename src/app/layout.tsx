@@ -27,6 +27,24 @@ export const metadata: Metadata = {
   },
 };
 
+const PERSON_JSON_LD = jsonLd({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE_NAME,
+  url: SITE_URL.href,
+  jobTitle: 'Tech Lead',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Datasintesa',
+    url: 'https://datasintesa.id/',
+  },
+  email: 'hi@rzbyn.com',
+  sameAs: [
+    'https://www.github.com/rzbyn',
+    'https://www.linkedin.com/in/rezabayuni',
+  ],
+});
+
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
@@ -48,25 +66,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           // biome-ignore lint:security/noDangerouslySetInnerHtml
-          dangerouslySetInnerHTML={{
-            __html: jsonLd({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Reza Bayuni',
-              url: 'https://rzbyn.com',
-              jobTitle: 'Tech Lead',
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Datasintesa',
-                url: 'https://datasintesa.id/',
-              },
-              email: 'hi@rzbyn.com',
-              sameAs: [
-                'https://www.github.com/rzbyn',
-                'https://www.linkedin.com/in/rezabayuni',
-              ],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: PERSON_JSON_LD }}
         />
       </head>
       <body className="grid min-h-svh grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-y-6 font-sans antialiased mx-auto w-[min(64rem,calc(100%-2rem))] pt-8 pb-10 md:grid-cols-[200px_minmax(0,1fr)] md:grid-rows-[auto_1fr_auto] md:gap-y-0 md:pt-20 md:pb-16 lg:pt-32">
