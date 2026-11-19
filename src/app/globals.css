@@ -7,28 +7,49 @@
  */
 :root {
   color-scheme: light dark;
-  --background: #fff;
-  --foreground: #000;
-  --accent: oklch(54.6% 0.245 262.881); /* blue-600, ~5.2:1 on #fff (AA) */
+  --background: #ffffff;
+  --foreground: #1b1c28;
+  --muted: #5c5f74;
+  --rule: #e7e8ef;
+  --accent: #3b3fb6; /* nila (batik indigo) */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: oklch(14.5% 0 0); /* neutral-950 */
-    --foreground: oklch(98.5% 0 0); /* neutral-50 */
-    --accent: oklch(70.7% 0.165 254.624); /* blue-400 */
+    --background: #11121b;
+    --foreground: #e6e7ef;
+    --muted: #9b9eb2;
+    --rule: #252737;
+    --accent: #a4a9f4;
   }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
   --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Static tokens: content measure and the strong ease-out for UI motion. */
+@theme {
+  --container-content: 38.5rem;
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 @layer base {
+  /* Keep the column from shifting between short and long pages. */
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 22%, transparent);
+  }
+
   body {
     @apply bg-background text-foreground;
   }

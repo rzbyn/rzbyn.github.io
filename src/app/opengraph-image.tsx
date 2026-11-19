@@ -65,9 +65,9 @@ export default function OpenGraphImage(): ImageResponse {
           justifyContent: 'space-between',
           width: '100%',
           paddingTop: '24px',
-          borderTop: `1px solid ${BRAND_COLORS.border}`,
+          borderTop: `1px solid ${BRAND_COLORS.rule}`,
           fontSize: '22px',
-          color: BRAND_COLORS.subtle,
+          color: BRAND_COLORS.muted,
         }}
       >
         <span>Jakarta, Indonesia</span>
