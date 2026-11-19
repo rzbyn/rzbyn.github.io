@@ -2,7 +2,7 @@ import {
   OPEN_GRAPH_DEFAULTS,
   SITE_DESCRIPTION,
   SITE_NAME,
-} from '@consts/site-metadata.const';
+} from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
 

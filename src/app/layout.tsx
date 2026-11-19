@@ -1,12 +1,12 @@
 import Footer from '@components/Footer';
 import Header from '@components/Header';
-import { geistMono, geistSans } from '@consts/geist-fonts.const';
+import { geistMono, geistSans } from '@shared/consts/geist-fonts.const';
 import {
   OPEN_GRAPH_DEFAULTS,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
-} from '@consts/site-metadata.const';
+} from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
 import jsonLd from '@shared/lib/json-ld';

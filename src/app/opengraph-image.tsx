@@ -1,4 +1,4 @@
-import { OPEN_GRAPH_IMAGE } from '@consts/site-metadata.const';
+import { OPEN_GRAPH_IMAGE } from '@shared/consts/site-metadata.const';
 import { ImageResponse } from 'next/og';
 
 export const dynamic = 'force-static';

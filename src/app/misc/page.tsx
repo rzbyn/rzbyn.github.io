@@ -1,4 +1,7 @@
-import { OPEN_GRAPH_DEFAULTS, SITE_NAME } from '@consts/site-metadata.const';
+import {
+  OPEN_GRAPH_DEFAULTS,
+  SITE_NAME,
+} from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
 import MiscList from './_components/MiscList';
