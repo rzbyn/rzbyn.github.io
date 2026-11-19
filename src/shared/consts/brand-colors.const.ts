@@ -6,7 +6,7 @@
 export const BRAND_COLORS = {
   background: '#ffffff',
   foreground: '#111827',
-  accent: '#3b82f6',
+  accent: '#155dfc',
   muted: '#475569',
   subtle: '#64748b',
   border: '#e5e7eb',
