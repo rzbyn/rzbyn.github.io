@@ -1,0 +1,6 @@
+# This directory content is generated
+# but the directory is expected to exists.
+# Ignore everythin in this directory
+*
+# Except itself
+!.gitignore
