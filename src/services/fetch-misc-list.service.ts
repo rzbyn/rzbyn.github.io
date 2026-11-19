@@ -1,5 +1,5 @@
 import { env } from '@shared/config/env/server.env';
-import { Notion } from '@/libs/notion';
+import { Notion } from '@shared/lib/notion';
 
 /**
  * Fetch miscellany posts from notion
