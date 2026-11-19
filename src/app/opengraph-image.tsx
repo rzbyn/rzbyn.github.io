@@ -1,3 +1,4 @@
+import { BRAND_COLORS } from '@shared/consts/brand-colors.const';
 import { OPEN_GRAPH_IMAGE } from '@shared/consts/site-metadata.const';
 import { ImageResponse } from 'next/og';
 
@@ -19,8 +20,8 @@ export default function OpenGraphImage(): ImageResponse {
         width: '100%',
         height: '100%',
         padding: '80px',
-        backgroundColor: '#ffffff',
-        color: '#111827',
+        backgroundColor: BRAND_COLORS.background,
+        color: BRAND_COLORS.foreground,
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -29,7 +30,7 @@ export default function OpenGraphImage(): ImageResponse {
             width: '14px',
             height: '14px',
             borderRadius: '50%',
-            backgroundColor: '#3b82f6',
+            backgroundColor: BRAND_COLORS.accent,
           }}
         />
         <span style={{ fontSize: '26px', fontWeight: 600 }}>Rzbyn</span>
@@ -37,7 +38,11 @@ export default function OpenGraphImage(): ImageResponse {
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
         <div
-          style={{ width: '72px', height: '6px', backgroundColor: '#3b82f6' }}
+          style={{
+            width: '72px',
+            height: '6px',
+            backgroundColor: BRAND_COLORS.accent,
+          }}
         />
         <span
           style={{
@@ -49,7 +54,7 @@ export default function OpenGraphImage(): ImageResponse {
         >
           Reza Bayuni
         </span>
-        <span style={{ fontSize: '32px', color: '#475569' }}>
+        <span style={{ fontSize: '32px', color: BRAND_COLORS.muted }}>
           Software engineer · Technical lead
         </span>
       </div>
@@ -60,9 +65,9 @@ export default function OpenGraphImage(): ImageResponse {
           justifyContent: 'space-between',
           width: '100%',
           paddingTop: '24px',
-          borderTop: '1px solid #e5e7eb',
+          borderTop: `1px solid ${BRAND_COLORS.border}`,
           fontSize: '22px',
-          color: '#64748b',
+          color: BRAND_COLORS.subtle,
         }}
       >
         <span>Jakarta, Indonesia</span>
