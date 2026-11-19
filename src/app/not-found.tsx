@@ -15,7 +15,7 @@ function NotFound(): JSX.Element {
       <Heading>Page not found</Heading>
       <Prose className="mt-6">
         <RandomMessage />
-        <p>
+        <p className="text-center">
           What are you looking for? Go to <TextLink href="/">homepage</TextLink>
         </p>
       </Prose>

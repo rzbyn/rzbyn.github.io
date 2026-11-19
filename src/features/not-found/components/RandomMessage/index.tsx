@@ -26,11 +26,13 @@ function RandomMessage(): JSX.Element {
   return (
     <>
       {/* Decorative: the message below carries the meaning */}
-      <p aria-hidden className="my-6 min-h-[1lh] text-5xl">
+      <p aria-hidden className="my-6 min-h-[1lh] text-center text-5xl">
         {picked?.icon}
       </p>
       {/* Fits the longest message: 3 lines at 320px, 2 from md up */}
-      <p className="min-h-[3lh] md:min-h-[2lh]">{picked?.message}</p>
+      <p className="min-h-[3lh] md:min-h-[2lh] text-center">
+        {picked?.message}
+      </p>
     </>
   );
 }
