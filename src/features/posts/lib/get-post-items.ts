@@ -1,19 +1,14 @@
 import { isFullPage } from '@notionhq/client';
-import { fetchPosts } from '@features/posts/services/fetch-posts.service';
+import { fetchPosts } from '../services/fetch-posts.service';
+import type { Post, PostType } from '../types';
 
-export async function getWritingItems() {
-  const notionPayload = await fetchPosts('writing');
+export async function getPostItems(
+  type: PostType,
+  basePath: string,
+): Promise<Post[]> {
+  const notionPayload = await fetchPosts(type);
   const { results } = notionPayload;
-  const path = '/writing/';
-  return (results as any[]).reduce<
-    Array<{
-      id: string;
-      title: string;
-      date: Date;
-      slug: string;
-      fullpath: string;
-    }>
-  >((acc, result) => {
+  return (results as any[]).reduce<Post[]>((acc, result) => {
     if (!isFullPage(result)) return acc;
 
     return [
@@ -35,7 +30,7 @@ export async function getWritingItems() {
             : '',
         fullpath:
           result.properties.slug.type === 'rich_text'
-            ? path + result.properties.slug.rich_text[0].plain_text
+            ? basePath + result.properties.slug.rich_text[0].plain_text
             : '',
       },
     ];

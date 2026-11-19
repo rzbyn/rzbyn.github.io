@@ -5,7 +5,7 @@ import {
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
 import WritingList from './_components/WritingList';
-import { getWritingItems } from './_lib/get-writing-items';
+import { getPostItems } from '@features/posts';
 
 const TITLE = 'Writing';
 const DESCRIPTION = 'Reza Bayuni writings.';
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export const revalidate = 1;
 
 async function Writing(): Promise<JSX.Element> {
-  const writingItems = await getWritingItems();
+  const writingItems = await getPostItems('writing', '/writing/');
 
   return (
     <>

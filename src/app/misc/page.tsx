@@ -5,7 +5,7 @@ import {
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
 import MiscList from './_components/MiscList';
-import { getMiscellanyItems } from './_lib/get-miscellany-items';
+import { getPostItems } from '@features/posts';
 
 const TITLE = 'Miscellany';
 const DESCRIPTION = 'Reza Bayuni miscellaneous.';
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export const revalidate = 1;
 
 async function Misc(): Promise<JSX.Element> {
-  const miscItems = await getMiscellanyItems();
+  const miscItems = await getPostItems('miscellany', '/misc/');
 
   return (
     <>
