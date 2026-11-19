@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { JSX } from 'react';
-import type { SocialItem } from '@/consts/social-items';
+import type { SocialItem } from '@/consts/social-items.const';
 
 interface SocialItemProps extends SocialItem {}
 

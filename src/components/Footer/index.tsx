@@ -1,4 +1,4 @@
-import { socialItems } from '@consts/social-items';
+import { socialItems } from '@consts/social-items.const';
 import type { JSX } from 'react';
 import SocialItemList from '@/components/Footer/_components/SocialItem';
 
