@@ -31,7 +31,8 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Heading className="sr-only">About</Heading>
-      <Prose>
+      {/* md: nudge the first line onto the nav baseline */}
+      <Prose className="md:-mt-[5px]">
         <p>
           I&apos;m a software engineer living in Jakarta, Indonesia. I&apos;m
           currently the Technical Lead of <Datasintesa />.

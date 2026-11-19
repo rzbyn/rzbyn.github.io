@@ -13,7 +13,7 @@ function PostList({ posts, emptyMessage }: PostListProps): JSX.Element {
 
   return (
     // role="list": Safari drops list semantics under list-style:none
-    <ol role="list">
+    <ol role="list" className="max-w-content divide-y divide-rule md:-mt-3">
       {posts.map((post): JSX.Element => {
         return (
           <PostItem
