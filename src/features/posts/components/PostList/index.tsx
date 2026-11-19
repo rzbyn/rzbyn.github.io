@@ -12,7 +12,8 @@ function PostList({ posts, emptyMessage }: PostListProps): JSX.Element {
     return <p>{emptyMessage}</p>;
 
   return (
-    <ol>
+    // role="list": Safari drops list semantics under list-style:none
+    <ol role="list">
       {posts.map((post): JSX.Element => {
         return (
           <PostItem
