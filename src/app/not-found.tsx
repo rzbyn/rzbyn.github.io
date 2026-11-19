@@ -1,5 +1,6 @@
 import { RandomMessage } from '@features/not-found';
 import Heading from '@shared/ui/Heading';
+import Prose from '@shared/ui/Prose';
 import TextLink from '@shared/ui/TextLink';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
 function NotFound(): JSX.Element {
   return (
     <>
-      <Heading>404 Page Not Found</Heading>
-      <div className="py-12 text-center">
+      <Heading>Page not found</Heading>
+      <Prose className="mt-6">
         <RandomMessage />
         <p>
           What are you looking for? Go to <TextLink href="/">homepage</TextLink>
         </p>
-      </div>
+      </Prose>
     </>
   );
 }

@@ -17,9 +17,7 @@ function PostItem({ title, date, fullpath }: PostItemProps): JSX.Element {
         underline="hover"
         className="flex justify-between gap-4"
       >
-        <Heading as="h2" variant="item">
-          {title}
-        </Heading>
+        <Heading as="h2">{title}</Heading>
         <time dateTime={date.toISOString().slice(0, 10)} className="shrink-0">
           {date.toLocaleDateString('id-ID', { timeZone: 'UTC' })}
         </time>

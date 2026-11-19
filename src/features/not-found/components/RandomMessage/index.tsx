@@ -27,10 +27,10 @@ function RandomMessage(): JSX.Element | null {
   return (
     <>
       {/* Decorative: the message below carries the meaning */}
-      <p aria-hidden className="my-10 text-6xl">
+      <p aria-hidden className="my-6 text-5xl">
         {picked.icon}
       </p>
-      <p className="mb-36">{picked.message}</p>
+      <p>{picked.message}</p>
     </>
   );
 }

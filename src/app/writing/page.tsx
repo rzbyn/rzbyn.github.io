@@ -29,7 +29,7 @@ async function Writing(): Promise<JSX.Element> {
 
   return (
     <>
-      <Heading>Writing</Heading>
+      <Heading className="sr-only">Writing</Heading>
       <PostList posts={posts} emptyMessage="Writing is empty." />
     </>
   );

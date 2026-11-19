@@ -6,6 +6,7 @@ import {
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
 import Heading from '@shared/ui/Heading';
+import Prose from '@shared/ui/Prose';
 import TextLink from '@shared/ui/TextLink';
 
 export const metadata: Metadata = {
@@ -29,8 +30,8 @@ function Datasintesa(): JSX.Element {
 export default function Home(): JSX.Element {
   return (
     <>
-      <Heading>About</Heading>
-      <div className="flex flex-col gap-4">
+      <Heading className="sr-only">About</Heading>
+      <Prose>
         <p>
           I&apos;m a software engineer living in Jakarta, Indonesia. I&apos;m
           currently the Technical Lead of <Datasintesa />.
@@ -43,7 +44,7 @@ export default function Home(): JSX.Element {
           coding, you can often find me in the kitchen 🍳 — lately I&apos;ve
           been into Italian and Chinese cuisine.
         </p>
-      </div>
+      </Prose>
     </>
   );
 }
