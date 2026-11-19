@@ -6,7 +6,9 @@ function Header(): JSX.Element {
   return (
     <header className="flex flex-col gap-2">
       <div>
-        <span className="font-extralight">[logo]</span>{' '}
+        <span aria-hidden className="font-extralight">
+          [logo]
+        </span>{' '}
         <Link href="/" className="font-bold tracking-wide text-2xl">
           Reza Bayuni
         </Link>
