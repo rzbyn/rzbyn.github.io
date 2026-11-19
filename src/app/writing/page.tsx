@@ -4,8 +4,7 @@ import {
 } from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
-import WritingList from './_components/WritingList';
-import { getPostItems } from '@features/posts';
+import { getPostItems, PostList } from '@features/posts';
 
 const TITLE = 'Writing';
 const DESCRIPTION = 'Reza Bayuni writings.';
@@ -25,13 +24,13 @@ export const metadata: Metadata = {
 export const revalidate = 1;
 
 async function Writing(): Promise<JSX.Element> {
-  const writingItems = await getPostItems('writing', '/writing/');
+  const posts = await getPostItems('writing', '/writing/');
 
   return (
     <>
       <h1>Writing</h1>
       <section>
-        <WritingList writingItems={writingItems} />
+        <PostList posts={posts} emptyMessage="Writing is empty." />
       </section>
     </>
   );

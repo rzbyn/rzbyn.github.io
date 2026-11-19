@@ -4,8 +4,7 @@ import {
 } from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
-import MiscList from './_components/MiscList';
-import { getPostItems } from '@features/posts';
+import { getPostItems, PostList } from '@features/posts';
 
 const TITLE = 'Miscellany';
 const DESCRIPTION = 'Reza Bayuni miscellaneous.';
@@ -25,13 +24,13 @@ export const metadata: Metadata = {
 export const revalidate = 1;
 
 async function Misc(): Promise<JSX.Element> {
-  const miscItems = await getPostItems('miscellany', '/misc/');
+  const posts = await getPostItems('miscellany', '/misc/');
 
   return (
     <>
       <h1>Miscellany</h1>
       <section>
-        <MiscList miscItems={miscItems} />
+        <PostList posts={posts} emptyMessage="Misc is empty." />
       </section>
     </>
   );

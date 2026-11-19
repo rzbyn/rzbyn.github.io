@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import type { JSX } from 'react';
 
-export interface WritingItemProps {
+export interface PostItemProps {
   title: string;
   date: Date;
   fullpath: string;
 }
 
-function WritingItem({ title, date, fullpath }: WritingItemProps): JSX.Element {
+function PostItem({ title, date, fullpath }: PostItemProps): JSX.Element {
   return (
     <li>
       <Link
@@ -21,4 +21,4 @@ function WritingItem({ title, date, fullpath }: WritingItemProps): JSX.Element {
   );
 }
 
-export default WritingItem;
+export default PostItem;
