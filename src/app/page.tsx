@@ -5,6 +5,7 @@ import {
 } from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
+import TextLink from '@shared/ui/TextLink';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -18,15 +19,9 @@ export const metadata: Metadata = {
 
 function Datasintesa(): JSX.Element {
   return (
-    <a
-      className="text-blue-500 underline"
-      href="https://datasintesa.id/"
-      target="_blank"
-      rel="noopener"
-      referrerPolicy="strict-origin-when-cross-origin"
-    >
+    <TextLink href="https://datasintesa.id/" external>
       Datasintesa
-    </a>
+    </TextLink>
   );
 }
 

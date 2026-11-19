@@ -1,7 +1,7 @@
 'use client';
 
 import { errorMessages } from '@features/not-found';
-import Link from 'next/link';
+import TextLink from '@shared/ui/TextLink';
 import { useRouter } from 'next/navigation';
 import { type JSX, useEffect, useState } from 'react';
 
@@ -60,9 +60,9 @@ function NotFound(): JSX.Element {
         <p className="mb-36">{message}</p>
         <p>
           What are you looking for? Go to{' '}
-          <Link href="/" className="text-blue-500">
+          <TextLink href="/" underline="none">
             homepage
-          </Link>
+          </TextLink>
         </p>
         <p>[{countdown}]</p>
       </section>

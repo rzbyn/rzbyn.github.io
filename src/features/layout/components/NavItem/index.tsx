@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import TextLink from '@shared/ui/TextLink';
 import { usePathname } from 'next/navigation';
 import type { JSX } from 'react';
 import { type NavItem } from '../../consts/nav-items.const';
@@ -23,12 +23,13 @@ function NavItemList({
   return (
     <li>
       {index === 0 || index === null ? '' : <span aria-hidden>/ </span>}
-      <Link
+      <TextLink
         href={fullpath}
-        className={`${isActive(path) ? 'text-blue-500 underline' : ''}`}
+        tone={isActive(path) ? 'accent' : 'inherit'}
+        underline={isActive(path) ? 'always' : 'none'}
       >
         {text}
-      </Link>
+      </TextLink>
     </li>
   );
 }

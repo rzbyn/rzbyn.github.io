@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import TextLink from '@shared/ui/TextLink';
 import type { JSX } from 'react';
 
 export interface PostItemProps {
@@ -10,13 +10,15 @@ export interface PostItemProps {
 function PostItem({ title, date, fullpath }: PostItemProps): JSX.Element {
   return (
     <li>
-      <Link
+      <TextLink
         href={fullpath}
-        className="flex justify-between hover:text-blue-500 hover:underline"
+        tone="hover-accent"
+        underline="hover"
+        className="flex justify-between"
       >
         <h2 className="text-base font-bold">{title}</h2>
         <span>{date.toLocaleDateString('id-ID')}</span>
-      </Link>
+      </TextLink>
     </li>
   );
 }
