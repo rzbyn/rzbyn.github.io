@@ -3,27 +3,25 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import Link from 'next/link';
 import type { AnchorHTMLAttributes, JSX } from 'react';
 
-export const textLinkVariants = cva(
-  'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent',
-  {
-    variants: {
-      tone: {
-        accent: 'text-accent',
-        inherit: '',
-        'hover-accent': 'hover:text-accent',
-      },
-      underline: {
-        always: 'underline',
-        hover: 'hover:underline',
-        none: '',
-      },
+// Focus ring comes from the global :focus-visible rule in globals.css.
+export const textLinkVariants = cva('', {
+  variants: {
+    tone: {
+      accent: 'text-accent',
+      inherit: '',
+      'hover-accent': 'hover:text-accent',
     },
-    defaultVariants: {
-      tone: 'accent',
-      underline: 'always',
+    underline: {
+      always: 'underline',
+      hover: 'hover:underline',
+      none: '',
     },
   },
-);
+  defaultVariants: {
+    tone: 'accent',
+    underline: 'always',
+  },
+});
 
 type TextLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> &
   VariantProps<typeof textLinkVariants> & {
