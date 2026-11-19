@@ -1,3 +1,4 @@
+import { Mark } from '@features/layout';
 import { BRAND_COLORS } from '@shared/consts/brand-colors.const';
 import { OPEN_GRAPH_IMAGE } from '@shared/consts/site-metadata.const';
 import { ImageResponse } from 'next/og';
@@ -24,38 +25,23 @@ export default function OpenGraphImage(): ImageResponse {
         color: BRAND_COLORS.foreground,
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <div
-          style={{
-            width: '14px',
-            height: '14px',
-            borderRadius: '50%',
-            backgroundColor: BRAND_COLORS.accent,
-          }}
-        />
-        <span style={{ fontSize: '26px', fontWeight: 600 }}>Rzbyn</span>
+      <div style={{ display: 'flex' }}>
+        <Mark width={56} height={56} fill={BRAND_COLORS.accent} />
       </div>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-        <div
-          style={{
-            width: '72px',
-            height: '6px',
-            backgroundColor: BRAND_COLORS.accent,
-          }}
-        />
         <span
           style={{
             fontSize: '88px',
             fontWeight: 700,
-            letterSpacing: '-0.05em',
+            letterSpacing: '0.04em',
             lineHeight: 1.1,
           }}
         >
-          Reza Bayuni
+          REZA BAYUNI
         </span>
         <span style={{ fontSize: '32px', color: BRAND_COLORS.muted }}>
-          Software engineer · Technical lead
+          Software engineer and technical lead
         </span>
       </div>
 
