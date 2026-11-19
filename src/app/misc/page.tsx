@@ -4,6 +4,7 @@ import {
 } from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
+import Heading from '@shared/ui/Heading';
 import { getPostItems, PostList } from '@features/posts';
 
 const TITLE = 'Miscellany';
@@ -28,7 +29,7 @@ async function Misc(): Promise<JSX.Element> {
 
   return (
     <>
-      <h1>Miscellany</h1>
+      <Heading>Miscellany</Heading>
       <section>
         <PostList posts={posts} emptyMessage="Misc is empty." />
       </section>

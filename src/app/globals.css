@@ -32,8 +32,4 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  main h1 {
-    @apply pb-3 uppercase font-bold tracking-wide
-  }
 }

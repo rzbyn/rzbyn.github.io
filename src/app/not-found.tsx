@@ -1,6 +1,7 @@
 'use client';
 
 import { errorMessages } from '@features/not-found';
+import Heading from '@shared/ui/Heading';
 import TextLink from '@shared/ui/TextLink';
 import { useRouter } from 'next/navigation';
 import { type JSX, useEffect, useState } from 'react';
@@ -50,7 +51,7 @@ function NotFound(): JSX.Element {
 
   return (
     <>
-      <h1>404 Page Not Found</h1>
+      <Heading>404 Page Not Found</Heading>
       <section className="py-12 text-center">
         <p className="my-10">
           <span role="img" aria-label={aria_label} className="text-6xl">

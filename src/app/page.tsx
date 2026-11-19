@@ -5,6 +5,7 @@ import {
 } from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
+import Heading from '@shared/ui/Heading';
 import TextLink from '@shared/ui/TextLink';
 
 export const metadata: Metadata = {
@@ -28,7 +29,7 @@ function Datasintesa(): JSX.Element {
 export default function Home(): JSX.Element {
   return (
     <>
-      <h1>About</h1>
+      <Heading>About</Heading>
       <section className="flex flex-col gap-4">
         <p>
           I&apos;m a software engineer living in Jakarta, Indonesia. I&apos;m

@@ -1,3 +1,4 @@
+import Heading from '@shared/ui/Heading';
 import TextLink from '@shared/ui/TextLink';
 import type { JSX } from 'react';
 
@@ -16,7 +17,9 @@ function PostItem({ title, date, fullpath }: PostItemProps): JSX.Element {
         underline="hover"
         className="flex justify-between"
       >
-        <h2 className="text-base font-bold">{title}</h2>
+        <Heading as="h2" variant="item">
+          {title}
+        </Heading>
         <span>{date.toLocaleDateString('id-ID')}</span>
       </TextLink>
     </li>
