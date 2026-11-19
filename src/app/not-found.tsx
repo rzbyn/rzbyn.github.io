@@ -15,10 +15,7 @@ function NotFound(): JSX.Element {
       <div className="py-12 text-center">
         <RandomMessage />
         <p>
-          What are you looking for? Go to{' '}
-          <TextLink href="/" underline="none">
-            homepage
-          </TextLink>
+          What are you looking for? Go to <TextLink href="/">homepage</TextLink>
         </p>
       </div>
     </>
