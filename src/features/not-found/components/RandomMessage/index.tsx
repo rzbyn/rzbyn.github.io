@@ -8,9 +8,10 @@ import {
 
 /**
  * Picks a random 404 message after mount, so the static export doesn't
- * freeze one message at build time. Renders nothing until then.
+ * freeze one message at build time. Both lines keep their height while
+ * empty, so filling them in doesn't push the page down.
  */
-function RandomMessage(): JSX.Element | null {
+function RandomMessage(): JSX.Element {
   const [picked, setPicked] = useState<ErrorMessage | null>(null);
 
   useEffect(() => {
@@ -22,15 +23,14 @@ function RandomMessage(): JSX.Element | null {
     return () => clearTimeout(timer);
   }, []);
 
-  if (!picked) return null;
-
   return (
     <>
       {/* Decorative: the message below carries the meaning */}
-      <p aria-hidden className="my-6 text-5xl">
-        {picked.icon}
+      <p aria-hidden className="my-6 min-h-[1lh] text-5xl">
+        {picked?.icon}
       </p>
-      <p>{picked.message}</p>
+      {/* Fits the longest message: 3 lines at 320px, 2 from md up */}
+      <p className="min-h-[3lh] md:min-h-[2lh]">{picked?.message}</p>
     </>
   );
 }
