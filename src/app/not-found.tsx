@@ -3,13 +3,9 @@
 import { errorMessages } from '@features/not-found';
 import Heading from '@shared/ui/Heading';
 import TextLink from '@shared/ui/TextLink';
-import { useRouter } from 'next/navigation';
 import { type JSX, useEffect, useState } from 'react';
 
 function NotFound(): JSX.Element {
-  const router = useRouter();
-  const [countdown, setCountdown] = useState(30);
-  const timeOutDelay = 30000;
   const [{ icon, aria_label, message }, setMessage] = useState({
     icon: '',
     aria_label: '',
@@ -24,30 +20,6 @@ function NotFound(): JSX.Element {
     }, 0);
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    const redirectTimer = setTimeout(() => {
-      router.push('/');
-    }, timeOutDelay);
-    return () => {
-      clearTimeout(redirectTimer);
-    };
-  }, [router]);
-
-  useEffect(() => {
-    const countdownInterval = setInterval(() => {
-      setCountdown((prevCountdown) => {
-        if (prevCountdown <= 1) {
-          clearInterval(countdownInterval);
-          return 0;
-        }
-        return prevCountdown - 1;
-      });
-    }, 1000);
-    return () => {
-      clearInterval(countdownInterval);
-    };
-  });
 
   return (
     <>
@@ -65,7 +37,6 @@ function NotFound(): JSX.Element {
             homepage
           </TextLink>
         </p>
-        <p>[{countdown}]</p>
       </section>
     </>
   );
