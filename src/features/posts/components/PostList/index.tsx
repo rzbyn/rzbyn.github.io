@@ -8,8 +8,7 @@ interface PostListProps {
 }
 
 function PostList({ posts, emptyMessage }: PostListProps): JSX.Element {
-  if (!posts || posts.length === 0 || !Array.isArray(posts))
-    return <p>{emptyMessage}</p>;
+  if (posts.length === 0) return <p>{emptyMessage}</p>;
 
   return (
     // role="list": Safari drops list semantics under list-style:none
