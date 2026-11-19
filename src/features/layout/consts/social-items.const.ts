@@ -1,17 +1,15 @@
-const ICONS_PATH = '/assets/icons/';
+import type { ComponentType, SVGProps } from 'react';
+import { EmailIcon, GitHubIcon, LinkedInIcon } from '../components/SocialIcons';
 
 export interface SocialItem {
   /** Link */
   href: string;
-  /** Image source */
-  src: string;
-  /** Image alt text, used as the link's accessible name */
-  alt: string;
+  /** Visually hidden link name */
+  label: string;
   /** Opens in a new tab */
   external: boolean;
-  /** Dimensions used to preserve the image aspect ratio */
-  width: number;
-  height: number;
+  /** Decorative icon, drawn in currentColor */
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
 }
 
 export interface SocialItems extends Array<SocialItem> {}
@@ -19,26 +17,20 @@ export interface SocialItems extends Array<SocialItem> {}
 export const socialItems: SocialItems = [
   {
     href: 'mailto:hi@rzbyn.com',
-    src: `${ICONS_PATH}email.svg`,
-    alt: 'Email',
+    label: 'Email',
     external: false,
-    width: 24,
-    height: 24,
+    Icon: EmailIcon,
   },
   {
     href: 'https://www.github.com/rzbyn',
-    src: `${ICONS_PATH}github.svg`,
-    alt: 'GitHub',
+    label: 'GitHub',
     external: true,
-    width: 122,
-    height: 120,
+    Icon: GitHubIcon,
   },
   {
     href: 'https://www.linkedin.com/in/rezabayuni',
-    src: `${ICONS_PATH}linkedin.svg`,
-    alt: 'LinkedIn',
+    label: 'LinkedIn',
     external: true,
-    width: 840,
-    height: 779,
+    Icon: LinkedInIcon,
   },
 ];
