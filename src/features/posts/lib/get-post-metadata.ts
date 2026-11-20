@@ -6,6 +6,13 @@ import type { Metadata } from 'next';
 import type { PostType } from '../types';
 import { getPost } from './get-post';
 
+// The site defaults minus `images`: an explicit image here would override
+// each post's own opengraph-image file.
+const ARTICLE_OPEN_GRAPH = {
+  siteName: OPEN_GRAPH_DEFAULTS.siteName,
+  locale: OPEN_GRAPH_DEFAULTS.locale,
+};
+
 /**
  * Page metadata for a post: its title, first-paragraph description, canonical
  * URL and Open Graph article fields.
@@ -27,7 +34,7 @@ export async function getPostMetadata(
     description,
     alternates: { canonical: url },
     openGraph: {
-      ...OPEN_GRAPH_DEFAULTS,
+      ...ARTICLE_OPEN_GRAPH,
       type: 'article',
       title: `${post.title} | ${SITE_NAME}`,
       description,
