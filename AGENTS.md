@@ -5,7 +5,7 @@
 Light feature-driven layout (not full Feature-Sliced Design):
 
 - `src/app/`: Next.js routes only. Pages stay thin: metadata plus composing features.
-- `src/features/<name>/`: everything one feature owns, split into `components/`, `services/`, `lib/` and `consts/` as needed, plus `index.ts` as its public API. Current features: `posts`, `layout` (shell, nav, footer and `Mark`, the replaceable logo), `not-found`.
+- `src/features/<name>/`: everything one feature owns, split into `components/`, `services/`, `lib/` and `consts/` as needed, plus `index.ts` as its public API. Current features: `posts`, `layout` (shell, nav, footer and `Mark`, the replaceable logo), `og-image` (Open Graph cards and their fonts), `not-found`.
 - `src/shared/`: code used by two or more places (`config/env`, `lib/notion`, `lib/json-ld.ts`, `lib/cn.ts`, `consts/`, and `ui/` for shared UI primitives built with `cva`, such as `ui/TextLink`, `ui/Heading` and `ui/Prose` for long-form text).
 
 Rules:
