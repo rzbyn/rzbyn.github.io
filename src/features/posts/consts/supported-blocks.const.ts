@@ -1,6 +1,8 @@
 /**
  * Notion block types the post renderer handles. A published post using any
  * other type fails the build, so content is never dropped silently.
+ * `NotionBlocks` is type-checked against this list: adding a type here
+ * without a renderer case is a compile error.
  */
 export const SUPPORTED_BLOCK_TYPES = [
   'paragraph',

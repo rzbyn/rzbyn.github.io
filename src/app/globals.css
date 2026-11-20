@@ -92,7 +92,8 @@
   }
 
   .prose h2,
-  .prose h3 {
+  .prose h3,
+  .prose h4 {
     font-family: var(--font-sans);
     font-variation-settings: 'wdth' 125;
     font-weight: 650;
@@ -139,5 +140,56 @@
   .prose hr {
     border-color: var(--rule);
     margin-block: 2.5em;
+  }
+
+  /* Rendered Notion posts. */
+  .prose li > * + * {
+    margin-top: 0.4em;
+  }
+
+  .prose blockquote {
+    border-left: 2px solid var(--rule);
+    padding-left: 1em;
+    color: var(--muted);
+  }
+
+  .prose pre {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    line-height: 1.6;
+    background: var(--rule);
+    border-radius: 4px;
+    padding: 0.9em 1em;
+    overflow-x: auto;
+  }
+
+  .prose pre code {
+    font-size: inherit;
+    background: none;
+    padding: 0;
+  }
+
+  .prose img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .prose figcaption {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-top: 0.5em;
+  }
+
+  .prose aside {
+    display: flex;
+    gap: 0.6em;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 0.9em 1em;
+  }
+
+  .prose summary {
+    cursor: pointer;
   }
 }
