@@ -2,6 +2,7 @@ import type { RichTextItemResponse } from '@notionhq/client';
 import { SITE_DESCRIPTION } from '@shared/consts/site-metadata.const';
 import { cache } from 'react';
 import { SUPPORTED_BLOCK_TYPE_SET } from '../consts/supported-blocks.const';
+import { downloadImage } from '../services/download-image.service';
 import { fetchBlockTree } from '../services/fetch-block-tree.service';
 import type { PostBlock, PostDetail, PostType } from '../types';
 import { excerpt } from './excerpt';
@@ -28,6 +29,26 @@ function headingLevel(block: PostBlock): HeadingLevel | undefined {
   return undefined;
 }
 
+/** Download every image in the tree, one at a time, and attach the local copy. */
+async function attachImages(blocks: PostBlock[], slug: string): Promise<void> {
+  for (const block of walk(blocks)) {
+    if (block.type !== 'image') continue;
+    const source = block.image;
+    const url =
+      source.type === 'file'
+        ? source.file.url
+        : source.type === 'external'
+          ? source.external.url
+          : undefined;
+    if (!url) {
+      throw new Error(
+        `Unsupported image source in block ${block.id} in post "${slug}"`,
+      );
+    }
+    block.asset = await downloadImage(url, block.id, slug);
+  }
+}
+
 function describe(blocks: PostBlock[]): string {
   for (const block of walk(blocks)) {
     if (block.type !== 'paragraph') continue;
@@ -38,9 +59,9 @@ function describe(blocks: PostBlock[]): string {
 }
 
 /**
- * Load one published post by type and slug, with its block tree, heading map
- * and description. Throws, failing the build, on a block type the renderer
- * doesn't support.
+ * Load one published post by type and slug, with its block tree, local image
+ * copies, heading map and description. Throws, failing the build, on a block
+ * type the renderer doesn't support.
  */
 export const getPost = cache(
   async (type: PostType, slug: string): Promise<PostDetail | undefined> => {
@@ -56,6 +77,8 @@ export const getPost = cache(
         `Unsupported Notion block "${unsupported.type}" in post "${slug}". Add support in src/features/posts or remove the block.`,
       );
     }
+
+    await attachImages(blocks, slug);
 
     const levels = [...walk(blocks)].flatMap((block) => {
       const level = headingLevel(block);

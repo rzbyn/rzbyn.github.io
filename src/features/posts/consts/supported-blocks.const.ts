@@ -15,6 +15,7 @@ export const SUPPORTED_BLOCK_TYPES = [
   'numbered_list_item',
   'quote',
   'toggle',
+  'image',
   'divider',
 ] as const;
 
