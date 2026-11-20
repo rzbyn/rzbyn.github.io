@@ -18,10 +18,10 @@
     "@t3-oss/env-nextjs": "^0.13.11",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "image-size": "2.0.4",
     "next": "^16.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "sharp": "0.35.5",
     "tailwind-merge": "^3.7.0",
     "zod": "^4.6.7"
   },
