@@ -8,6 +8,12 @@ export const env = createEnv({
       .string()
       .min(1)
       .describe('NOTION_DATASOURCE_ID is required'),
+    CF_BEACON_TOKEN: z
+      .string()
+      .optional()
+      .describe(
+        'Cloudflare Web Analytics site token; beacon is omitted when unset',
+      ),
   },
   experimental__runtimeEnv: process.env,
 });

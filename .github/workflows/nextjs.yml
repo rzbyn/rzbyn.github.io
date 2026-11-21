@@ -79,6 +79,7 @@ jobs:
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATASOURCE_ID: ${{ secrets.NOTION_DATASOURCE_ID }}
+          CF_BEACON_TOKEN: ${{ secrets.CF_BEACON_TOKEN }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

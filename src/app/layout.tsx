@@ -1,3 +1,4 @@
+import { CloudflareAnalytics } from '@features/analytics';
 import { Footer, Header, Navbar } from '@features/layout';
 import { archivo, geistMono, literata } from '@shared/consts/fonts.const';
 import {
@@ -68,6 +69,7 @@ export default function RootLayout({
           // biome-ignore lint:security/noDangerouslySetInnerHtml
           dangerouslySetInnerHTML={{ __html: PERSON_JSON_LD }}
         />
+        <CloudflareAnalytics />
       </head>
       <body className="grid min-h-svh grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-y-6 font-sans antialiased mx-auto w-[min(64rem,calc(100%-2rem))] pt-8 pb-10 md:grid-cols-[200px_minmax(0,1fr)] md:grid-rows-[auto_1fr_auto] md:gap-y-0 md:pt-20 md:pb-16 lg:pt-32">
         <a
