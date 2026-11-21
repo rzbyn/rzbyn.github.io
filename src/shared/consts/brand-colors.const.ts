@@ -5,8 +5,9 @@
  */
 export const BRAND_COLORS = {
   background: '#ffffff',
-  foreground: '#1b1c28',
-  muted: '#5c5f74',
-  rule: '#e7e8ef',
-  accent: '#3b3fb6',
+  foreground: '#1c1714',
+  muted: '#6b5f58',
+  rule: '#ede7e3',
+  accent: '#a3221f',
+  signature: '#8f6400',
 } as const;

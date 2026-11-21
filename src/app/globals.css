@@ -8,19 +8,21 @@
 :root {
   color-scheme: light dark;
   --background: #ffffff;
-  --foreground: #1b1c28;
-  --muted: #5c5f74;
-  --rule: #e7e8ef;
-  --accent: #3b3fb6; /* nila (batik indigo) */
+  --foreground: #1c1714;
+  --muted: #6b5f58;
+  --rule: #ede7e3;
+  --accent: #a3221f; /* sirah (songket red) */
+  --signature: #8f6400; /* kuniang (antique gold): signature motif only */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #11121b;
-    --foreground: #e6e7ef;
-    --muted: #9b9eb2;
-    --rule: #252737;
-    --accent: #a4a9f4;
+    --background: #15110f;
+    --foreground: #ece6e2;
+    --muted: #a89d96;
+    --rule: #2c2522;
+    --accent: #f08a7e;
+    --signature: #d9a93f;
   }
 }
 
@@ -30,6 +32,7 @@
   --color-muted: var(--muted);
   --color-rule: var(--rule);
   --color-accent: var(--accent);
+  --color-signature: var(--signature);
   --font-sans: var(--font-archivo);
   --font-serif: var(--font-literata);
   --font-mono: var(--font-geist-mono);
