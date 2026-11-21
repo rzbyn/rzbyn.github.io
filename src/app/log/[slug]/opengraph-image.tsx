@@ -6,9 +6,9 @@ import {
 } from '@shared/consts/site-metadata.const';
 import type { ImageResponse } from 'next/og';
 
-const TYPE = 'miscellany';
+const TYPE = 'log';
 
-interface MiscPostImageProps {
+interface LogPostImageProps {
   params: Promise<{ slug: string }>;
 }
 
@@ -25,9 +25,9 @@ export function generateStaticParams(): Promise<Array<{ slug: string }>> {
 }
 
 /** The post's title card; the empty-section placeholder gets the site card. */
-export default async function MiscPostImage({
+export default async function LogPostImage({
   params,
-}: MiscPostImageProps): Promise<ImageResponse> {
+}: LogPostImageProps): Promise<ImageResponse> {
   const { slug } = await params;
   const card = await getPostCard(TYPE, slug);
   return card ? postOgImage(card) : siteOgImage();

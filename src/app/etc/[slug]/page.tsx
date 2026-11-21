@@ -8,10 +8,10 @@ import {
   PostArticle,
 } from '@features/posts';
 
-const TYPE = 'miscellany';
-const BASE_PATH = '/misc/';
+const TYPE = 'etc';
+const BASE_PATH = '/etc/';
 
-interface MiscPostProps {
+interface EtcPostProps {
   params: Promise<{ slug: string }>;
 }
 
@@ -23,12 +23,12 @@ export function generateStaticParams(): Promise<Array<{ slug: string }>> {
 
 export async function generateMetadata({
   params,
-}: MiscPostProps): Promise<Metadata> {
+}: EtcPostProps): Promise<Metadata> {
   const { slug } = await params;
   return getPostMetadata(TYPE, slug, BASE_PATH);
 }
 
-async function MiscPost({ params }: MiscPostProps): Promise<JSX.Element> {
+async function EtcPost({ params }: EtcPostProps): Promise<JSX.Element> {
   const { slug } = await params;
   const detail = await getPost(TYPE, slug);
   if (!detail) notFound();
@@ -36,4 +36,4 @@ async function MiscPost({ params }: MiscPostProps): Promise<JSX.Element> {
   return <PostArticle detail={detail} />;
 }
 
-export default MiscPost;
+export default EtcPost;

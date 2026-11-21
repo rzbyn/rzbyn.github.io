@@ -6,9 +6,9 @@ import {
 } from '@shared/consts/site-metadata.const';
 import type { ImageResponse } from 'next/og';
 
-const TYPE = 'writing';
+const TYPE = 'etc';
 
-interface WritingPostImageProps {
+interface EtcPostImageProps {
   params: Promise<{ slug: string }>;
 }
 
@@ -25,9 +25,9 @@ export function generateStaticParams(): Promise<Array<{ slug: string }>> {
 }
 
 /** The post's title card; the empty-section placeholder gets the site card. */
-export default async function WritingPostImage({
+export default async function EtcPostImage({
   params,
-}: WritingPostImageProps): Promise<ImageResponse> {
+}: EtcPostImageProps): Promise<ImageResponse> {
   const { slug } = await params;
   const card = await getPostCard(TYPE, slug);
   return card ? postOgImage(card) : siteOgImage();

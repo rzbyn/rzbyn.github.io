@@ -33,7 +33,7 @@ export async function siteOgImage(): Promise<ImageResponse> {
 
 interface PostCard {
   title: string;
-  /** Section and date, e.g. "Writing · 22 May 2025". */
+  /** Section and date, e.g. "Log · 22 May 2025". */
   meta: string;
 }
 

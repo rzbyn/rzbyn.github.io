@@ -11,18 +11,18 @@ export interface NavItems extends Array<NavItem> {}
 
 export const navItems: NavItems = [
   {
-    text: 'About',
+    text: 'Home',
     fullpath: '/',
     path: '',
   },
   {
-    text: 'Writing',
-    fullpath: '/writing',
-    path: 'writing',
+    text: 'Log',
+    fullpath: '/log',
+    path: 'log',
   },
   {
-    text: 'Misc',
-    fullpath: '/misc',
-    path: 'misc',
+    text: 'Etc',
+    fullpath: '/etc',
+    path: 'etc',
   },
 ];

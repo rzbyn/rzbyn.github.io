@@ -16,7 +16,7 @@ const ARTICLE_OPEN_GRAPH = {
 /**
  * Page metadata for a post: its title, first-paragraph description, canonical
  * URL and Open Graph article fields.
- * @param basePath Route prefix with slashes, e.g. `/writing/`.
+ * @param basePath Route prefix with slashes, e.g. `/log/`.
  */
 export async function getPostMetadata(
   type: PostType,

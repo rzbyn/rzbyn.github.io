@@ -8,10 +8,10 @@ import {
   PostArticle,
 } from '@features/posts';
 
-const TYPE = 'writing';
-const BASE_PATH = '/writing/';
+const TYPE = 'log';
+const BASE_PATH = '/log/';
 
-interface WritingPostProps {
+interface LogPostProps {
   params: Promise<{ slug: string }>;
 }
 
@@ -23,12 +23,12 @@ export function generateStaticParams(): Promise<Array<{ slug: string }>> {
 
 export async function generateMetadata({
   params,
-}: WritingPostProps): Promise<Metadata> {
+}: LogPostProps): Promise<Metadata> {
   const { slug } = await params;
   return getPostMetadata(TYPE, slug, BASE_PATH);
 }
 
-async function WritingPost({ params }: WritingPostProps): Promise<JSX.Element> {
+async function LogPost({ params }: LogPostProps): Promise<JSX.Element> {
   const { slug } = await params;
   const detail = await getPost(TYPE, slug);
   if (!detail) notFound();
@@ -36,4 +36,4 @@ async function WritingPost({ params }: WritingPostProps): Promise<JSX.Element> {
   return <PostArticle detail={detail} />;
 }
 
-export default WritingPost;
+export default LogPost;

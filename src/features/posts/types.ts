@@ -2,7 +2,7 @@ import type { BlockObjectResponse } from '@notionhq/client';
 import type { HeadingTags } from './lib/heading-tags';
 
 /** Notion `type` select value used to split posts. */
-export type PostType = 'writing' | 'miscellany';
+export type PostType = 'log' | 'etc';
 
 export interface Post {
   id: string;
