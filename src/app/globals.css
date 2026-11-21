@@ -140,9 +140,22 @@
     padding-left: 1.25em;
   }
 
+  /* Section break drawn as the Signature motif (saik galamai), kept a native
+     <hr> so it still reads as a separator. Keep the mask path in sync with
+     src/shared/ui/Signature. */
   .prose hr {
-    border-color: var(--rule);
+    border: 0;
+    height: 10px;
     margin-block: 2.5em;
+    background: var(--signature);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill-rule='evenodd' d='M6 0 12 6 6 12 0 6Z M6 3.4 8.6 6 6 8.6 3.4 6Z'/%3E%3C/svg%3E")
+      center / 10px 10px no-repeat;
+
+    /* Forced colours override backgrounds, which would erase the mask. */
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      background: CanvasText;
+    }
   }
 
   /* Rendered Notion posts. */

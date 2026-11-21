@@ -1,5 +1,6 @@
 import Heading from '@shared/ui/Heading';
 import Prose from '@shared/ui/Prose';
+import Signature from '@shared/ui/Signature';
 import type { JSX } from 'react';
 import { formatPostDate } from '../../lib/format-post-date';
 import type { PostDetail } from '../../types';
@@ -9,7 +10,7 @@ interface PostArticleProps {
   detail: PostDetail;
 }
 
-/** A full post: title as the page h1, publish date, then the Notion body. */
+/** A full post: title as the page h1, publish date, the Notion body, then the end mark. */
 function PostArticle({ detail }: PostArticleProps): JSX.Element {
   const { post, blocks, headings } = detail;
 
@@ -27,6 +28,7 @@ function PostArticle({ detail }: PostArticleProps): JSX.Element {
       <Prose>
         <NotionBlocks blocks={blocks} headings={headings} />
       </Prose>
+      <Signature className="mt-8 block size-2 text-signature" />
     </article>
   );
 }
