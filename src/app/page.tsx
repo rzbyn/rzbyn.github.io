@@ -38,12 +38,17 @@ export default function Home(): JSX.Element {
           currently the Technical Lead of <Datasintesa />.
         </p>
         <p>
-          Working around architecture and technological stacks across projects.
+          These days I&apos;m focused on system architecture, performance and
+          reliability, mostly building with TypeScript on Node.
         </p>
         <p>
-          Husband to a beautiful wife, and soon-to-be father. When I&apos;m not
-          coding, you can often find me in the kitchen 🍳 — lately I&apos;ve
-          been into Italian and Chinese cuisine.
+          Husband to a beautiful wife, soon-to-be father. When I&apos;m not
+          coding, you can often find me in the kitchen. Lately I&apos;ve been
+          into Italian and Chinese cuisine.
+        </p>
+        <p>
+          I&apos;m open to networking, or if you just want to say hi, email me
+          at <TextLink href="mailto:hi@rzbyn.com">hi@rzbyn.com</TextLink>.
         </p>
       </Prose>
     </>
