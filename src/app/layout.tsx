@@ -1,4 +1,5 @@
 import { CloudflareAnalytics } from '@features/analytics';
+import { ConsoleHint } from '@features/easter-egg';
 import { Footer, Header, Navbar } from '@features/layout';
 import { archivo, geistMono, literata } from '@shared/consts/fonts.const';
 import {
@@ -89,6 +90,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <ConsoleHint />
       </body>
     </html>
   );
