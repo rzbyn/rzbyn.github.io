@@ -33,5 +33,5 @@ Target WCAG 2.2 AA. Use native HTML first and ARIA only where HTML has no equiva
 - Use `TextLink` for links. Its `external` prop adds the visually hidden "(opens in new tab)" label.
 - Don't add focus classes to components. The global `:focus-visible` rule in `src/app/globals.css` draws every focus ring.
 - Add `role="list"` to a styled `<ul>`/`<ol>` outside `<nav>`. Safari drops list semantics under Tailwind's `list-style: none`.
-- Use one `<h1>` per page through `Heading`, and don't skip heading levels. Index pages may hide it visually with `className="sr-only"`; the nav dot shows where you are. Wrap dates in `<time dateTime>`. Don't add `<section>` without a heading.
+- Use one `<h1>` per page through `Heading`, and don't skip heading levels. Index pages may hide it visually with `className="sr-only"`; the `Signature` motif in the nav shows where you are. Wrap dates in `<time dateTime>`. Don't add `<section>` without a heading.
 - No timed redirects or auto-advancing content. Text color tokens must keep 4.5:1 contrast against `--background` in both schemes.
