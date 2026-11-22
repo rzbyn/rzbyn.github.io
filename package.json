@@ -1,10 +1,10 @@
 {
   "name": "rzbyn.com",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "node -e \"require('node:fs').rmSync('public/notion',{recursive:true,force:true})\"",
+    "prebuild": "node -e \"for (const d of ['public/notion','.next/cache/fetch-cache']) require('node:fs').rmSync(d,{recursive:true,force:true})\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
