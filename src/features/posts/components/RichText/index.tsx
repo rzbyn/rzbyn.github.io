@@ -27,9 +27,9 @@ function renderItem(item: RichTextItemResponse): ReactNode {
   return node;
 }
 
-// No classes, so .prose a:not([class]) styles every variant. Same tab, by
-// design. Off-site links get the same rel and referrer policy as TextLink
-// external; on-site links use next/link like TextLink internal.
+// No classes, so .prose a:not([class]) styles every variant. Off-site links
+// behave like TextLink external (new tab, announced to screen readers, rel and
+// referrer policy); on-site links use next/link like TextLink internal.
 function renderLink(href: string, children: ReactNode): ReactNode {
   const target = linkTarget(href, SITE_URL);
   if (target.kind === 'internal') {
@@ -41,8 +41,10 @@ function renderLink(href: string, children: ReactNode): ReactNode {
         href={href}
         rel="noopener"
         referrerPolicy="strict-origin-when-cross-origin"
+        target="_blank"
       >
         {children}
+        <span className="sr-only"> (opens in new tab)</span>
       </a>
     );
   }
