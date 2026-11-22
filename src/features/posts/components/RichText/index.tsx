@@ -1,5 +1,8 @@
 import type { RichTextItemResponse } from '@notionhq/client';
+import Link from 'next/link';
 import { Fragment, type JSX, type ReactNode } from 'react';
+import { SITE_URL } from '@shared/consts/site-metadata.const';
+import { linkTarget } from '../../lib/link-target';
 import { splitLines } from '../../lib/split-lines';
 
 interface RichTextProps {
@@ -20,9 +23,30 @@ function renderItem(item: RichTextItemResponse): ReactNode {
   if (italic) node = <em>{node}</em>;
   if (strikethrough) node = <s>{node}</s>;
   if (underline) node = <u>{node}</u>;
-  // Raw anchor: .prose a:not([class]) styles it. Same tab, by design.
-  if (item.href) node = <a href={item.href}>{node}</a>;
+  if (item.href) node = renderLink(item.href, node);
   return node;
+}
+
+// No classes, so .prose a:not([class]) styles every variant. Same tab, by
+// design. Off-site links get the same rel and referrer policy as TextLink
+// external; on-site links use next/link like TextLink internal.
+function renderLink(href: string, children: ReactNode): ReactNode {
+  const target = linkTarget(href, SITE_URL);
+  if (target.kind === 'internal') {
+    return <Link href={target.href}>{children}</Link>;
+  }
+  if (target.kind === 'external') {
+    return (
+      <a
+        href={href}
+        rel="noopener"
+        referrerPolicy="strict-origin-when-cross-origin"
+      >
+        {children}
+      </a>
+    );
+  }
+  return <a href={href}>{children}</a>;
 }
 
 /** Notion rich text with its inline formatting. Notion colors are ignored. */
