@@ -2,9 +2,12 @@ import {
   OPEN_GRAPH_DEFAULTS,
   SITE_DESCRIPTION,
   SITE_NAME,
-} from '@consts/site-metadata.const';
+} from '@shared/consts/site-metadata.const';
 import type { Metadata } from 'next';
 import type { JSX } from 'react';
+import Heading from '@shared/ui/Heading';
+import Prose from '@shared/ui/Prose';
+import TextLink from '@shared/ui/TextLink';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -18,35 +21,36 @@ export const metadata: Metadata = {
 
 function Datasintesa(): JSX.Element {
   return (
-    <a
-      className="text-blue-500 underline"
-      href="https://datasintesa.id/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <TextLink href="https://datasintesa.id/" external>
       Datasintesa
-    </a>
+    </TextLink>
   );
 }
 
 export default function Home(): JSX.Element {
   return (
     <>
-      <h1>About</h1>
-      <section className="flex flex-col gap-4">
+      <Heading className="sr-only">About</Heading>
+      {/* md: nudge the first line onto the nav baseline */}
+      <Prose className="md:-mt-[5px]">
         <p>
           I&apos;m a software engineer living in Jakarta, Indonesia. I&apos;m
           currently the Technical Lead of <Datasintesa />.
         </p>
         <p>
-          Working around architecture and technological stacks across projects.
+          These days I&apos;m focused on system architecture, performance and
+          reliability, mostly building with TypeScript on Node.
         </p>
         <p>
-          Husband to a beautiful wife, and soon-to-be father. When I&apos;m not
-          coding, you can often find me in the kitchen 🍳 — lately I&apos;ve
-          been into Italian and Chinese cuisine.
+          Husband to a beautiful wife, soon-to-be father. When I&apos;m not
+          coding, you can often find me in the kitchen. Lately I&apos;ve been
+          into Italian and Chinese cuisine.
         </p>
-      </section>
+        <p>
+          I&apos;m open to networking, or if you just want to say hi, email me
+          at <TextLink href="mailto:hi@rzbyn.com">hi@rzbyn.com</TextLink>.
+        </p>
+      </Prose>
     </>
   );
 }

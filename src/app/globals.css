@@ -1,8 +1,211 @@
 @import "tailwindcss";
 
-@layer base {
-  main h1 {
-    @apply pb-3 uppercase font-bold tracking-wide
+/*
+ * Design tokens. Raw values live here; @theme inline maps them to utilities
+ * (bg-background, text-foreground, text-accent). Override the raw vars, not
+ * --color-*, because @theme inline copies var(--x) straight into utilities.
+ */
+:root {
+  color-scheme: light dark;
+  --background: #ffffff;
+  --foreground: #1c1714;
+  --muted: #6b5f58;
+  --rule: #ede7e3;
+  --accent: #a3221f; /* sirah (songket red) */
+  --signature: #8f6400; /* kuniang (antique gold): signature motif only */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #15110f;
+    --foreground: #ece6e2;
+    --muted: #a89d96;
+    --rule: #2c2522;
+    --accent: #f08a7e;
+    --signature: #d9a93f;
   }
 }
 
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-signature: var(--signature);
+  --font-sans: var(--font-archivo);
+  --font-serif: var(--font-literata);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Wide Archivo. A custom name, because tailwind-merge reads unknown font-*
+   classes as a font family and would drop font-sans next to it. */
+@utility stretch-wide {
+  font-variation-settings: 'wdth' 125;
+}
+
+/* Static tokens: content measure and the strong ease-out for UI motion. */
+@theme {
+  --container-content: 38.5rem;
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@layer base {
+  /* Keep the column from shifting between short and long pages. */
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--accent) 22%, transparent);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* One focus ring for every focusable control (WCAG 2.4.7). Skip-link
+     targets (tabindex="-1") are excluded on purpose. */
+  :where(a[href], button, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+/* Long-form text (Prose). Headings match body size and stand apart by face. */
+@layer components {
+  .prose {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    max-width: var(--container-content);
+
+    @media (width >= 48rem) {
+      font-size: 1.0625rem;
+    }
+  }
+
+  .prose > * + * {
+    margin-top: 1.1em;
+  }
+
+  .prose p,
+  .prose li {
+    text-wrap: pretty;
+  }
+
+  .prose h2,
+  .prose h3,
+  .prose h4 {
+    font-family: var(--font-sans);
+    font-variation-settings: 'wdth' 125;
+    font-weight: 650;
+    font-size: 1.0625rem;
+    line-height: 1.4;
+    text-wrap: balance;
+    margin-top: 2.2em;
+  }
+
+  /* Raw anchors (future rendered posts); TextLink sets its own classes. */
+  .prose a:not([class]) {
+    color: var(--accent);
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: color-mix(in oklab, var(--accent) 70%, transparent);
+    transition: text-decoration-color 150ms ease;
+
+    @media (hover: hover) {
+      &:hover {
+        text-decoration-color: var(--accent);
+      }
+    }
+  }
+
+  .prose code {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background: var(--rule);
+    border-radius: 4px;
+    padding: 0.1em 0.3em;
+  }
+
+  .prose ul {
+    list-style: disc;
+    padding-left: 1.25em;
+  }
+
+  .prose ol {
+    list-style: decimal;
+    padding-left: 1.25em;
+  }
+
+  /* Section break drawn as the Signature motif (saik galamai), kept a native
+     <hr> so it still reads as a separator. Keep the mask path in sync with
+     src/shared/ui/Signature. */
+  .prose hr {
+    border: 0;
+    height: 10px;
+    margin-block: 2.5em;
+    background: var(--signature);
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath fill-rule='evenodd' d='M6 0 12 6 6 12 0 6Z M6 3.4 8.6 6 6 8.6 3.4 6Z'/%3E%3C/svg%3E")
+      center / 10px 10px no-repeat;
+
+    /* Forced colours override backgrounds, which would erase the mask. */
+    @media (forced-colors: active) {
+      forced-color-adjust: none;
+      background: CanvasText;
+    }
+  }
+
+  /* Rendered Notion posts. */
+  .prose li > * + * {
+    margin-top: 0.4em;
+  }
+
+  .prose blockquote {
+    border-left: 2px solid var(--rule);
+    padding-left: 1em;
+    color: var(--muted);
+  }
+
+  .prose pre {
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    line-height: 1.6;
+    background: var(--rule);
+    border-radius: 4px;
+    padding: 0.9em 1em;
+    overflow-x: auto;
+  }
+
+  .prose pre code {
+    font-size: inherit;
+    background: none;
+    padding: 0;
+  }
+
+  .prose img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .prose figcaption {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-top: 0.5em;
+  }
+
+  .prose aside {
+    display: flex;
+    gap: 0.6em;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    padding: 0.9em 1em;
+  }
+
+  .prose summary {
+    cursor: pointer;
+  }
+}

@@ -40,3 +40,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# graphify
+graphify-out
+
+# post images downloaded from Notion at build time
+/public/notion/

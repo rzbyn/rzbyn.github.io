@@ -1,15 +1,16 @@
-import Footer from '@components/Footer';
-import Header from '@components/Header';
-import { geistMono, geistSans } from '@consts/geist-fonts.const';
+import { CloudflareAnalytics } from '@features/analytics';
+import { ConsoleHint } from '@features/easter-egg';
+import { Footer, Header, Navbar } from '@features/layout';
+import { archivo, geistMono, literata } from '@shared/consts/fonts.const';
 import {
   OPEN_GRAPH_DEFAULTS,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
-} from '@consts/site-metadata.const';
-import type { Metadata } from 'next';
+} from '@shared/consts/site-metadata.const';
+import type { Metadata, Viewport } from 'next';
 import type { JSX } from 'react';
-import jsonLd from '@/libs/jsonLd';
+import jsonLd from '@shared/lib/json-ld';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -20,12 +21,37 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   authors: [{ name: SITE_NAME, url: SITE_URL }],
-  referrer: 'origin',
+  referrer: 'origin-when-cross-origin',
   openGraph: {
     ...OPEN_GRAPH_DEFAULTS,
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
   },
+};
+
+const PERSON_JSON_LD = jsonLd({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE_NAME,
+  url: SITE_URL.href,
+  jobTitle: 'Tech Lead',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Datasintesa',
+    url: 'https://datasintesa.id/',
+  },
+  email: 'hi@rzbyn.com',
+  sameAs: [
+    'https://www.github.com/rzbyn',
+    'https://www.linkedin.com/in/rezabayuni',
+  ],
+});
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#15110f' },
+  ],
 };
 
 export default function RootLayout({
@@ -34,36 +60,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): JSX.Element {
   return (
-    <html lang="en" className={`${geistMono.variable} ${geistSans.variable} `}>
+    <html
+      lang="en"
+      className={`${archivo.variable} ${literata.variable} ${geistMono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
           // biome-ignore lint:security/noDangerouslySetInnerHtml
-          dangerouslySetInnerHTML={{
-            __html: jsonLd({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Reza Bayuni',
-              url: 'https://rzbyn.com',
-              jobTitle: 'Tech Lead',
-              worksFor: {
-                '@type': 'Organization',
-                name: 'Datasintesa',
-                url: 'https://datasintesa.id/',
-              },
-              email: 'hi@rzbyn.com',
-              sameAs: [
-                'https://www.github.com/rzbyn',
-                'https://www.linkedin.com/in/rezabayuni',
-              ],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: PERSON_JSON_LD }}
         />
+        <CloudflareAnalytics />
       </head>
-      <body className="flex flex-col gap-8 font-(family-name:--font-geist-mono) antialiased max-w-5xl mb-40 mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
+      <body className="grid min-h-svh grid-cols-1 grid-rows-[auto_auto_1fr_auto] gap-y-6 font-sans antialiased mx-auto w-[min(64rem,calc(100%-2rem))] pt-8 pb-10 md:grid-cols-[200px_minmax(0,1fr)] md:grid-rows-[auto_1fr_auto] md:gap-y-0 md:pt-20 md:pb-16 lg:pt-32">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-background focus:text-foreground focus:px-3 focus:py-2 focus:underline"
+        >
+          Skip to main content
+        </a>
         <Header />
-        <main className="flex-1 min-h-[58dvh]">{children}</main>
+        <Navbar />
+        {/* tabIndex -1: focus target for the skip link only, not a control */}
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="focus:outline-none md:col-start-2"
+        >
+          {children}
+        </main>
         <Footer />
+        <ConsoleHint />
       </body>
     </html>
   );

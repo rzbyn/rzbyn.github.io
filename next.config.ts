@@ -1,6 +1,6 @@
+import '@shared/config/env/client.env';
+import '@shared/config/env/server.env';
 import type { NextConfig } from 'next';
-import '@configs/env/server.env';
-import '@configs/env/client.env';
 
 const nextConfig: NextConfig = {
   output: 'export',
@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  poweredByHeader: false,
 };
 
 export default nextConfig;
